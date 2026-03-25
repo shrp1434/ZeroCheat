@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Reports — AI Exam Monitor{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <h1>📄 Exam Reports</h1>
+    <p class="subtitle">Download PDF integrity reports for completed exam sessions.</p>
+
+    <div class="card">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Session ID</th>
+                    <th>Student</th>
+                    <th>Date</th>
+                    <th>Final Risk</th>
+                    <th>Cheating Prob</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for s in sessions %}
+                <tr>
+                    <td>#{{ s.id }}</td>
+                    <td>{{ s.full_name }}<br><small>{{ s.username }}</small></td>
+                    <td>{{ s.start_time[:10] }}</td>
+                    <td>
+                        <span class="badge {{ 'badge-danger' if s.final_risk_score and s.final_risk_score > 60 else 'badge-ok' }}">
+                            {{ s.final_risk_score|round(1) if s.final_risk_score else 'N/A' }}
+                        </span>
+                    </td>
+                    <td>{{ (s.final_cheating_prob|round(1)|string + '%') if s.final_cheating_prob else 'N/A' }}</td>
+                    <td>
+                        <a href="/generate_report/{{ s.id }}"
+                           class="btn btn-primary btn-small">
+                            📥 Generate &amp; Download PDF
+                        </a>
+                    </td>
+                </tr>
+                {% else %}
+                <tr><td colspan="6" class="no-data">No completed sessions yet.</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
