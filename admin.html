@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block title %}Admin Panel — AI Exam Monitor{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <h1>⚙️ Admin Panel</h1>
+
+    <!-- Registered Users -->
+    <div class="card">
+        <h2>👥 Registered Users</h2>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Full Name</th>
+                    <th>Registered</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for u in users %}
+                <tr>
+                    <td>{{ u.id }}</td>
+                    <td>{{ u.username }}</td>
+                    <td>{{ u.full_name }}</td>
+                    <td>{{ u.created_at[:10] }}</td>
+                    <td>
+                        <a href="/admin/delete_user/{{ u.id }}"
+                           onclick="return confirm('Delete {{ u.username }}?')"
+                           class="btn-small btn-danger">Delete</a>
+                    </td>
+                </tr>
+                {% else %}
+                <tr><td colspan="5" class="no-data">No users registered.</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- AI Model Management -->
+    <div class="card">
+        <h2>🤖 AI Model Management</h2>
+        <div class="button-row">
+            <a href="/admin/retrain_behaviour" class="btn btn-primary">
+                🔄 Retrain Behaviour Model
+            </a>
+            <a href="/admin/retrain_anomaly" class="btn btn-primary">
+                🔄 Retrain Anomaly Models
+            </a>
+        </div>
+        <div class="info-box" style="margin-top:1rem">
+            <strong>Model Files:</strong>
+            <ul>
+                <li>behaviour_model.pkl — Random Forest + SVM + LR Ensemble</li>
+                <li>isolation_forest.pkl — Anomaly Detection</li>
+                <li>one_class_svm.pkl — One-Class SVM</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- System Info -->
+    <div class="card">
+        <h2>💻 System Info</h2>
+        <table class="data-table">
+            <tr><td>Database</td><td>exam_monitor.db (SQLite)</td></tr>
+            <tr><td>Camera Index</td><td>0 (default webcam)</td></tr>
+            <tr><td>YOLO Model</td><td>yolov8n.pt (COCO)</td></tr>
+            <tr><td>Face Recognition</td><td>dlib / face_recognition</td></tr>
+            <tr><td>Behaviour Analysis</td><td>MediaPipe Face Mesh + Pose</td></tr>
+        </table>
+    </div>
+</div>
+{% endblock %}
