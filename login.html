@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Login — AI Exam Monitor{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <div class="card card-narrow">
+        <h1>🔐 Biometric Login</h1>
+        <p class="subtitle">Look at the camera. Your face will be matched against your registered profile.</p>
+
+        <!-- Live Webcam -->
+        <div class="webcam-box-center">
+            <img src="{{ url_for('video_feed') }}" class="webcam-feed" alt="Webcam">
+            <p class="webcam-label">📷 Position your face in the centre of the frame</p>
+        </div>
+
+        <form method="POST" action="/login">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username"
+                       placeholder="Enter your username" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+                🔍 Verify Identity &amp; Login
+            </button>
+        </form>
+
+        <div class="divider">New student?</div>
+        <a href="/register" class="btn btn-secondary btn-full">Register Here</a>
+    </div>
+</div>
+{% endblock %}
