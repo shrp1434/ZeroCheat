@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Register — AI Exam Monitor{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <div class="card">
+        <h1>📋 Register New Student</h1>
+        <p class="subtitle">Your face and iris will be captured via webcam for biometric registration.</p>
+
+        <div class="two-col">
+            <!-- Live Webcam Preview -->
+            <div class="webcam-box">
+                <img src="{{ url_for('video_feed') }}" class="webcam-feed" alt="Webcam Feed">
+                <p class="webcam-label">📷 Live Webcam — Position your face in the frame</p>
+            </div>
+
+            <!-- Registration Form -->
+            <div class="form-box">
+                <form method="POST" action="/register">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username"
+                               placeholder="e.g. john_doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="full_name">Full Name</label>
+                        <input type="text" id="full_name" name="full_name"
+                               placeholder="e.g. John Doe" required>
+                    </div>
+
+                    <div class="info-box">
+                        <strong>What gets captured:</strong>
+                        <ul>
+                            <li>✅ Face encoding (128-dimensional vector)</li>
+                            <li>✅ Iris features (left + right eye)</li>
+                            <li>✅ Typing pattern (during exam)</li>
+                            <li>✅ Mouse movement pattern (during exam)</li>
+                        </ul>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">
+                        📸 Capture Biometrics &amp; Register
+                    </button>
+                </form>
+
+                <div class="divider">Already registered?</div>
+                <a href="/login" class="btn btn-secondary btn-full">Go to Login</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
