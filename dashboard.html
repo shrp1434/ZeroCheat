@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+{% block title %}Live Dashboard — AI Exam Monitor{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <h1>📊 Teacher Live Dashboard</h1>
+    <p class="subtitle">Real-time monitoring of all active exam sessions.</p>
+
+    <!-- Summary Stats Bar -->
+    <div class="stats-bar">
+        <div class="stat-box">
+            <div class="stat-num" id="active-count">—</div>
+            <div class="stat-label">Active Sessions</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-num" id="alert-count">—</div>
+            <div class="stat-label">Active Alerts</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-num" id="high-risk-count">—</div>
+            <div class="stat-label">High Risk (&gt;60)</div>
+        </div>
+    </div>
+
+    <!-- Sessions Table -->
+    <div class="card">
+        <h2>Active &amp; Recent Sessions</h2>
+        <table class="data-table" id="sessions-table">
+            <thead>
+                <tr>
+                    <th>Student</th>
+                    <th>Session ID</th>
+                    <th>Start Time</th>
+                    <th>Risk Score</th>
+                    <th>Cheating Prob</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="sessions-body">
+                {% for s in sessions %}
+                <tr class="{{ 'row-danger' if s.final_risk_score and s.final_risk_score > 60 else '' }}">
+                    <td>{{ s.full_name }} <br><small>{{ s.username }}</small></td>
+                    <td>#{{ s.id }}</td>
+                    <td>{{ s.start_time[:19] }}</td>
+                    <td>
+                        <span class="badge {{ 'badge-danger' if s.final_risk_score and s.final_risk_score > 60 else 'badge-ok' }}">
+                            {{ s.final_risk_score|round(1) if s.final_risk_score else '—' }}
+                        </span>
+                    </td>
+                    <td>{{ (s.final_cheating_prob|round(1)|string + '%') if s.final_cheating_prob else '—' }}</td>
+                    <td>
+                        <span class="status-pill status-{{ s.status }}">{{ s.status }}</span>
+                    </td>
+                    <td>
+                        <a href="/logs?session_id={{ s.id }}" class="btn-small">Logs</a>
+                        <a href="/generate_report/{{ s.id }}" class="btn-small btn-blue">PDF</a>
+                    </td>
+                </tr>
+                {% else %}
+                <tr><td colspan="7" class="no-data">No sessions yet.</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Live Risk Chart -->
+    <div class="card">
+        <h2>📈 Risk Score History (Current Session)</h2>
+        <canvas id="riskChart" height="80"></canvas>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // ── Live Risk Chart ──
+    const ctx = document.getElementById('riskChart').getContext('2d');
+    const riskChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: [],
+            datasets: [
+                {
+                    label: 'Risk Score',
+                    data: [],
+                    borderColor: '#e74c3c',
+                    backgroundColor: 'rgba(231,76,60,0.1)',
+                    tension: 0.3,
+                    fill: true,
+                },
+                {
+                    label: 'Cheating Prob (%)',
+                    data: [],
+                    borderColor: '#f39c12',
+                    backgroundColor: 'rgba(243,156,18,0.1)',
+                    tension: 0.3,
+                    fill: false,
+                },
+                {
+                    label: 'Identity Confidence (%)',
+                    data: [],
+                    borderColor: '#2ecc71',
+                    tension: 0.3,
+                    fill: false,
+                }
+            ]
+        },
+        options: {
+            animation: false,
+            scales: {
+                y: { min: 0, max: 100, grid: { color: '#333' } },
+                x: { ticks: { maxTicksLimit: 10 } }
+            },
+            plugins: { legend: { display: true } }
+        }
+    });
+
+    let tick = 0;
+
+    async function updateChart() {
+        try {
+            const res = await fetch('/exam_status');
+            const d = await res.json();
+            tick++;
+
+            riskChart.data.labels.push(tick);
+            riskChart.data.datasets[0].data.push(d.risk_score    || 0);
+            riskChart.data.datasets[1].data.push(d.cheating_prob || 0);
+            riskChart.data.datasets[2].data.push(d.identity_conf || 100);
+
+            // Keep only last 60 data points
+            if (riskChart.data.labels.length > 60) {
+                riskChart.data.labels.shift();
+                riskChart.data.datasets.forEach(ds => ds.data.shift());
+            }
+            riskChart.update();
+
+            // Update summary stats
+            document.getElementById('alert-count').textContent =
+                (d.alerts || []).length;
+        } catch(e) {}
+    }
+
+    setInterval(updateChart, 2000);
+</script>
+{% endblock %}
