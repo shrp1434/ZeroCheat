@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}AI Exam Monitor{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Chart.js for live graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-brand">🎓 AI Exam Monitor</div>
+        <div class="nav-links">
+            <a href="/register">Register</a>
+            <a href="/login">Login</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/logs">Logs</a>
+            <a href="/reports">Reports</a>
+            <a href="/admin">Admin</a>
+        </div>
+        {% if session.username %}
+        <div class="nav-user">
+            👤 {{ session.username }}
+            <a href="/logout" class="btn-small">Logout</a>
+        </div>
+        {% endif %}
+    </nav>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-container">
+                {% for category, message in messages %}
+                    <div class="flash flash-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Page Content -->
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <p>AI Biometric Exam Monitor — Running Locally &amp; Offline</p>
+    </footer>
+
+    {% block scripts %}{% endblock %}
+</body>
+</html>
