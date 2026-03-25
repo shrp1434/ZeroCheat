@@ -205,8 +205,164 @@ def liveness_passed():
 
 # ─── Exam ─────────────────────────────────────────────────────────────────────
 
+    # ─── (Continuation of app.py) ────────────────────────────────────────────────
+
 @app.route("/exam")
 def exam():
+    if "user_id" not in session:
+        return redirect(url_for("login"))
+
+    global exam_monitor
+    user_id = session["user_id"]
+
+    # Start a new exam session in the DB
+    session_id = start_session(user_id)
+    session["session_id"] = session_id
+
+    # Start the AI monitoring engine
+    exam_monitor = ExamMonitor(user_id, session_id, camera)
+    exam_monitor.start()
+
+    return render_template("exam.html",
+                           username=session.get("username"),
+                           session_id=session_id)
+
+
+@app.route("/exam_status")
+def exam_status():
+    """AJAX endpoint: return current monitoring state as JSON."""
+    if exam_monitor is None:
+        return jsonify({"risk_score": 0, "cheating_prob": 0,
+                        "identity_conf": 100, "alerts": []})
+    state = dict(exam_monitor.current_state)
+    state.pop("annotated_frame", None)   # can't JSON-serialise numpy array
+    return jsonify(state)
+
+
+@app.route("/end_exam")
+def end_exam():
+    global exam_monitor
+    if exam_monitor:
+        exam_monitor.stop()
+        state = exam_monitor.current_state
+        end_session(
+            session.get("session_id", 0),
+            state.get("risk_score", 0),
+            state.get("cheating_prob", 0)
+        )
+        exam_monitor = None
+    return redirect(url_for("reports"))
+
+
+# ─── Dashboard ────────────────────────────────────────────────────────────────
+
+@app.route("/dashboard")
+def dashboard():
+    sessions = get_all_sessions()
+    return render_template("dashboard.html", sessions=sessions)
+
+
+# ─── Logs ─────────────────────────────────────────────────────────────────────
+
+@app.route("/logs")
+def logs():
+    all_sessions = get_all_sessions()
+    selected_id  = request.args.get("session_id", type=int)
+
+    if selected_id:
+        events = get_events_for_session(selected_id)
+    else:
+        # Show all events from all sessions
+        conn = get_connection()
+        rows = conn.execute("SELECT * FROM events ORDER BY timestamp DESC LIMIT 200").fetchall()
+        conn.close()
+        events = [dict(r) for r in rows]
+
+    return render_template("logs.html",
+                           events=events,
+                           all_sessions=all_sessions,
+                           selected_session_id=selected_id)
+
+
+@app.route("/screenshot/<int:event_id>")
+def screenshot(event_id):
+    """Serve a screenshot image for an event."""
+    conn = get_connection()
+    row = conn.execute("SELECT screenshot_path FROM events WHERE id=?", (event_id,)).fetchone()
+    conn.close()
+    if row and row["screenshot_path"] and os.path.exists(row["screenshot_path"]):
+        return send_file(row["screenshot_path"], mimetype="image/jpeg")
+    return "Screenshot not found", 404
+
+
+# ─── Reports ──────────────────────────────────────────────────────────────────
+
+@app.route("/reports")
+def reports():
+    sessions = get_all_sessions()
+    return render_template("reports.html", sessions=sessions)
+
+
+@app.route("/generate_report/<int:session_id>")
+def generate_report_route(session_id):
+    """Generate a PDF report and send it to the browser for download."""
+    user_id = session.get("user_id", 1)
+    pdf_path = generate_report(session_id, user_id)
+    return send_file(pdf_path, as_attachment=True,
+                     download_name=f"exam_report_session_{session_id}.pdf")
+
+
+# ─── Admin ────────────────────────────────────────────────────────────────────
+
+@app.route("/admin")
+def admin():
+    users = get_all_users()
+    return render_template("admin.html", users=users)
+
+
+@app.route("/admin/delete_user/<int:user_id>")
+def delete_user(user_id):
+    conn = get_connection()
+    conn.execute("DELETE FROM users WHERE id=?",        (user_id,))
+    conn.execute("DELETE FROM face_data WHERE user_id=?", (user_id,))
+    conn.execute("DELETE FROM iris_data WHERE user_id=?", (user_id,))
+    conn.commit()
+    conn.close()
+    flash("User deleted.", "success")
+    return redirect(url_for("admin"))
+
+
+@app.route("/admin/retrain_behaviour")
+def retrain_behaviour():
+    from behaviour_model import train_behaviour_model
+    train_behaviour_model()
+    flash("Behaviour model retrained successfully.", "success")
+    return redirect(url_for("admin"))
+
+
+@app.route("/admin/retrain_anomaly")
+def retrain_anomaly():
+    from anomaly_detection import train_anomaly_models
+    train_anomaly_models()
+    flash("Anomaly models retrained successfully.", "success")
+    return redirect(url_for("admin"))
+
+
+# ─── Logout ───────────────────────────────────────────────────────────────────
+
+@app.route("/logout")
+def logout():
+    session.clear()
+    flash("Logged out.", "success")
+    return redirect(url_for("login"))
+
+
+# ─── Main ─────────────────────────────────────────────────────────────────────
+
+if __name__ == "__main__":
+    camera.start()
+    app.run(debug=False, host="0.0.0.0", port=5000, threaded=True)
+
     if "user_id" not in session:
         return redirect(url_for("login"))
 
