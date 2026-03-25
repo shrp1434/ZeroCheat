@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}Event Logs — AI Exam Monitor{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <h1>📋 Event Logs</h1>
+
+    <!-- Session Filter -->
+    <div class="filter-bar">
+        <form method="GET" action="/logs">
+            <label>Filter by Session:
+                <select name="session_id" onchange="this.form.submit()">
+                    <option value="">All Sessions</option>
+                    {% for s in all_sessions %}
+                    <option value="{{ s.id }}"
+                        {{ 'selected' if s.id == selected_session_id }}>
+                        #{{ s.id }} — {{ s.username }} ({{ s.start_time[:10] }})
+                    </option>
+                    {% endfor %}
+                </select>
+            </label>
+        </form>
+    </div>
+
+    <div class="card">
+        {% if events %}
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Session</th>
+                    <th>Event Type</th>
+                    <th>Severity</th>
+                    <th>Description</th>
+                    <th>Screenshot</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for e in events %}
+                <tr class="{{ 'row-danger' if e.severity == 'HIGH' else '' }}">
+                    <td>{{ e.timestamp[:19] }}</td>
+                    <td>#{{ e.session_id }}</td>
+                    <td>
+                        <code>{{ e.event_type }}</code>
+                    </td>
+                    <td>
+                        <span class="badge {{ 'badge-danger' if e.severity == 'HIGH' else 'badge-warn' }}">
+                            {{ e.severity }}
+                        </span>
+                    </td>
+                    <td>{{ e.description }}</td>
+                    <td>
+                        {% if e.screenshot_path %}
+                        <a href="/screenshot/{{ e.id }}" target="_blank" class="btn-small">View</a>
+                        {% else %}
+                        <span class="muted">—</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <div class="no-data">No events found for this filter.</div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
