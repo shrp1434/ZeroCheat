@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Liveness Check — AI Exam Monitor{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <div class="card card-narrow">
+        <h1>👁️ Liveness Verification</h1>
+        <p class="subtitle">Prove you are a real person — not a photo or video.</p>
+
+        <!-- Challenge Instruction (updates via JS) -->
+        <div class="challenge-box" id="challenge-box">
+            <div class="challenge-icon">🎯</div>
+            <div class="challenge-text" id="challenge-text">{{ challenge }}</div>
+        </div>
+
+        <!-- Webcam -->
+        <div class="webcam-box-center">
+            <img src="{{ url_for('video_feed') }}" class="webcam-feed" alt="Webcam">
+        </div>
+
+        <!-- Status indicator -->
+        <div class="status-indicator" id="status-indicator">
+            <div class="spinner"></div>
+            <span id="status-text">Waiting for challenge completion...</span>
+        </div>
+
+        <!-- Success overlay (hidden until passed) -->
+        <div class="success-panel" id="success-panel" style="display:none">
+            <div class="success-icon">✅</div>
+            <p>Liveness confirmed! Redirecting to exam...</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Poll every 500ms to check if the challenge has been passed
+    const poll = setInterval(async () => {
+        const res = await fetch('/liveness_status');
+        const data = await res.json();
+
+        document.getElementById('challenge-text').textContent = data.challenge;
+
+        if (data.passed) {
+            clearInterval(poll);
+            document.getElementById('status-indicator').style.display = 'none';
+            document.getElementById('success-panel').style.display    = 'flex';
+            document.getElementById('challenge-box').style.background = '#2ecc71';
+            // Redirect after 1.5 seconds
+            setTimeout(() => window.location.href = '/liveness_passed', 1500);
+        }
+    }, 500);
+</script>
+{% endblock %}
