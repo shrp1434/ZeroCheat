@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+{% block title %}Exam — AI Exam Monitor{% endblock %}
+
+{% block content %}
+<div class="exam-layout">
+
+    <!-- LEFT: Exam Content Area -->
+    <div class="exam-area">
+        <div class="exam-header">
+            <h2>📝 Exam in Progress</h2>
+            <span class="exam-timer" id="exam-timer">00:00:00</span>
+            <button class="btn btn-danger" onclick="endExam()">🏁 Submit Exam</button>
+        </div>
+
+        <!-- This is where your actual exam questions would go -->
+        <div class="exam-content">
+            <div class="question-box">
+                <h3>Question 1</h3>
+                <p>This is a placeholder exam question. In a real system, questions would load here from a question bank.</p>
+                <textarea class="exam-answer" rows="5"
+                          placeholder="Type your answer here..."></textarea>
+            </div>
+            <div class="question-box">
+                <h3>Question 2</h3>
+                <p>Another example question. The AI monitors your behaviour continuously while you type.</p>
+                <textarea class="exam-answer" rows="5"
+                          placeholder="Type your answer here..."></textarea>
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT: Live Monitoring Panel -->
+    <div class="monitor-panel">
+        <h3>🔍 Live Monitor</h3>
+
+        <!-- Webcam (annotated with YOLO boxes) -->
+        <img src="{{ url_for('video_feed_annotated') }}"
+             class="webcam-feed-small" alt="Live Feed">
+
+        <!-- Risk Score Gauge -->
+        <div class="metric-card" id="risk-card">
+            <div class="metric-label">⚠️ Risk Score</div>
+            <div class="metric-value" id="risk-score">0</div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="risk-bar" style="width:0%"></div>
+            </div>
+        </div>
+
+        <!-- Cheating Probability -->
+        <div class="metric-card" id="cheat-card">
+            <div class="metric-label">🚨 Cheating Probability</div>
+            <div class="metric-value" id="cheat-prob">0%</div>
+        </div>
+
+        <!-- Identity Confidence -->
+        <div class="metric-card">
+            <div class="metric-label">🪪 Identity Confidence</div>
+            <div class="metric-value" id="identity-conf">100%</div>
+        </div>
+
+        <!-- Behaviour Status -->
+        <div class="metric-card">
+            <div class="metric-label">🧠 Behaviour</div>
+            <div class="metric-value" id="behaviour-label">Normal</div>
+        </div>
+
+        <!-- Gaze / Head Info -->
+        <div class="metric-card">
+            <div class="metric-label">👀 Gaze Direction</div>
+            <div class="metric-value" id="gaze-dir">center</div>
+        </div>
+
+        <!-- Live Alerts -->
+        <div class="alerts-box">
+            <div class="alerts-title">🔔 Alerts</div>
+            <div id="alerts-list">No alerts</div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // ── Exam Timer ──
+    let seconds = 0;
+    setInterval(() => {
+        seconds++;
+        const h = String(Math.floor(seconds / 3600)).padStart(2, '0');
+        const m = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
+        const s = String(seconds % 60).padStart(2, '0');
+        document.getElementById('exam-timer').textContent = `${h}:${m}:${s}`;
+    }, 1000);
+
+    // ── Live Status Polling ──
+    async function pollStatus() {
+        try {
+            const res = await fetch('/exam_status');
+            const d = await res.json();
+
+            const risk = d.risk_score || 0;
+            document.getElementById('risk-score').textContent    = risk.toFixed(1);
+            document.getElementById('cheat-prob').textContent    = (d.cheating_prob || 0).toFixed(1) + '%';
+            document.getElementById('identity-conf').textContent = (d.identity_conf || 100).toFixed(1) + '%';
+            document.getElementById('behaviour-label').textContent = d.behaviour_label || 'Normal';
+            document.getElementById('gaze-dir').textContent      = d.gaze_direction || 'center';
+
+            // Update progress bar colour
+            const bar = document.getElementById('risk-bar');
+            bar.style.width = risk + '%';
+            bar.style.background = risk < 30 ? '#2ecc71' : risk < 60 ? '#f39c12' : '#e74c3c';
+
+            // Update risk card border colour
+            const rcard = document.getElementById('risk-card');
+            rcard.style.borderColor = risk < 30 ? '#2ecc71' : risk < 60 ? '#f39c12' : '#e74c3c';
+
+            // Alerts
+            const alertsList = document.getElementById('alerts-list');
+            if (d.alerts && d.alerts.length > 0) {
+                alertsList.innerHTML = d.alerts.map(a =>
+                    `<div class="alert-item">${a}</div>`
+                ).join('');
+            } else {
+                alertsList.innerHTML = '<div class="no-alert">✅ No alerts</div>';
+            }
+        } catch(e) {
+            console.error('Status poll error:', e);
+        }
+    }
+
+    setInterval(pollStatus, 1000);   // poll every second
+
+    // ── End Exam ──
+    function endExam() {
+        if (confirm('Are you sure you want to submit the exam?')) {
+            window.location.href = '/end_exam';
+        }
+    }
+</script>
+{% endblock %}
