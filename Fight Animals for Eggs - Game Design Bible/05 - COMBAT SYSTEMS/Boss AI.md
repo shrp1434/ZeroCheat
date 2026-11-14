@@ -130,7 +130,7 @@ What eligible players receive is **UNDECIDED** ([[Open Questions#Q-015]]); see [
 | Hatching or base-teleport mid-fight to dodge defeat | Teleports out of combat are blocked while combat-tagged ([[Combat States and State Machine]]). |
 
 ## Downed and defeat inside boss fights
-In boss encounters players are **Downed** before being defeated: 15 s bleed-out, revivable by an ally (3 s channel, 30% HP) *(new)*. Full rules in [[Player Defeat and Penalties]].
+In **world boss** encounters players are **Downed** before being defeated: 15 s bleed-out, revivable by an ally (3 s channel, 30% HP) *(new)*. Mini-boss defeats skip the downed state. Both are unapproved options under [[Open Questions#Q-014]]; full rules in [[Player Defeat and Penalties]].
 
 ## Test hooks
 - With telegraph rule 3, an automated bot that walks straight out from the centre of every telegraph takes no heavy-attack damage.

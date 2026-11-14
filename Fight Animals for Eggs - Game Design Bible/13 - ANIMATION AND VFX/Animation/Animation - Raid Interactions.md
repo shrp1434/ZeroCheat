@@ -175,7 +175,7 @@ Orb glows amber, then bursts into sparkles (VFX-354 secure burst); an icon of th
 | Outcome | Raider | Defender | Guards |
 |---|---|---|---|
 | Raid succeeds | ANI-532: fist pump and cheer (no taunting gestures, no pointing at the defender) | ANI-533 is not played; neutral idle | — |
-| Raid repelled or fails | Neutral shrug-free recovery to idle | ANI-533: arms-up relief cheer | Victory clips ([[Animation - Animal Defeat and Victory]]) |
+| Raid repelled or fails | Neutral recovery to idle | ANI-533: arms-up relief cheer | Victory clips ([[Animation - Animal Defeat and Victory]]) |
 
 End-of-raid banners and summaries are in [[UI - Raid Interface]]; compensation is in [[Raid Rewards and Defender Compensation]].
 

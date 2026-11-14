@@ -61,7 +61,7 @@ tags:
 
 ## Dependencies
 
-[[Service - CombatService]], [[Service - AnimalAIService]], [[Service - BaseService]], [[Service - PvPService]], [[Service - TeamService]], [[Service - EggService]], [[Service - DataService]], [[Service - AnalyticsAndLoggingService]]. Systems: `AnimalLedger`, `AssetLocks`, `ZoneQuery`.
+[[Service - CombatService]], [[Service - AnimalAIService]], [[Service - BaseService]], [[Service - PvPService]], [[Service - TeamService]], [[Service - EggService]], [[Service - DataService]], [[Service - AnalyticsAndLoggingService]]. Systems: `AnimalLedger`, `AssetLocks`, `ZoneQuery`, `RaidContext` (written here).
 
 ## Events
 
@@ -116,19 +116,19 @@ export type RaidSession = {
 | 8 | Matchmaking band hook passes | `E_RAID_NOT_ELIGIBLE` | Q-029 |
 | 9 | Attacker not the defender | `E_RAID_NOT_ELIGIBLE` | — |
 
-Because a raid requires the defender to be in the same server, **offline bases are unraidable by construction**: an offline player's profile is not loaded anywhere a raid could run. Cross-server raiding is out of scope (**PROPOSED**, Q-807).
+Because a raid requires the defender to be in the same server, **offline bases are unraidable by construction**: an offline player's profile is not loaded anywhere a raid could run. Whether cross-server raiding (raiding an online player who is in a different server) is ever supported is **UNDECIDED** (Q-807); the working assumption is that it is out of scope, which keeps theft an in-memory transaction.
 
 ## Session lifecycle
 
 ```mermaid
 stateDiagram-v2
-    [*] --> Pending: "RequestRaid passes eligibility"
-    Pending --> Active: "warning period ends"
-    Pending --> Aborted: "either player leaves or eligibility lost"
-    Active --> Resolving: "timer reaches durationSeconds (Q-012)"
-    Active --> Resolving: "attacker RequestEnd or attacker defeated"
-    Active --> Resolving: "disconnect, per defenderDisconnectPolicy"
-    Resolving --> Completed: "outcome computed, claims committed or voided"
+    [*] --> Pending: RequestRaid passes eligibility
+    Pending --> Active: warning period ends
+    Pending --> Aborted: either player leaves or eligibility lost
+    Active --> Resolving: timer reaches durationSeconds (Q-012)
+    Active --> Resolving: attacker RequestEnd or attacker defeated
+    Active --> Resolving: disconnect, per defenderDisconnectPolicy
+    Resolving --> Completed: outcome computed, claims committed or voided
     Aborted --> [*]
     Completed --> [*]
 ```

@@ -84,22 +84,22 @@ return IndexService
 
 ```mermaid
 sequenceDiagram
-    participant B as "Bootstrap Script"
-    participant L as "ServiceLoader"
-    participant S as "Each service"
-    participant D as "DataService"
-    B->>L: "LoadAll(Services folder)"
-    L->>L: "require every ModuleScript"
-    L->>L: "validate Dependencies and Layer, topological sort"
-    loop "In dependency order"
-        L->>S: "Init(registry)"
+    participant B as Bootstrap Script
+    participant L as ServiceLoader
+    participant S as Each service
+    participant D as DataService
+    B->>L: LoadAll(Services folder)
+    L->>L: require every ModuleScript
+    L->>L: validate Dependencies and Layer, topological sort
+    loop In dependency order
+        L->>S: Init(registry)
     end
-    loop "In dependency order"
-        L->>S: "Start() in task.spawn"
+    loop In dependency order
+        L->>S: Start() in task.spawn
     end
-    L->>B: "ready, set ReplicatedStorage attribute ServerReady"
-    Note over D: "Players.PlayerAdded handled by DataService first, then ProfileLoaded signal fans out"
-    B->>L: "BindToClose calls Shutdown in reverse order"
+    L->>B: ready, set ReplicatedStorage attribute ServerReady
+    Note over D: Players.PlayerAdded handled by DataService first, then ProfileLoaded signal fans out
+    B->>L: BindToClose calls Shutdown in reverse order
 ```
 
 | Phase | Allowed | Forbidden |

@@ -36,8 +36,8 @@ What happens when the player reaches 0 HP, for each type of battle.
 
 | Step | Rule *(new values)* |
 |---|---|
-| 1. 0 HP | Player enters `Defeated` (or `Downed` in boss fights, see below). Companions disengage and become untargetable. |
-| 2. Defeat screen | 5 s respawn delay with a short "what hit you" summary ([[Combat Feedback and Readability]]). |
+| 1. 0 HP | Player enters `Defeated` (or `Downed` in world boss fights, see below). Companions disengage and become untargetable. |
+| 2. Defeat screen | 5 s respawn delay (10 s at a world boss rally point) with a short "what hit you" summary ([[Combat Feedback and Readability]]). |
 | 3. Respawn | Location depends on battle type. HP restored to 100%. |
 | 4. Companions | All three companions are restored to full HP, including any that were knocked out. |
 | 5. Spawn protection | 3 s invulnerability, ended early by attacking. |

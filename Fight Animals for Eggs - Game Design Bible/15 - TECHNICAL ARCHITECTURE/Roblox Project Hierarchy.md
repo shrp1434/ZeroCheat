@@ -110,7 +110,9 @@ game
 │   │   ├── AnimalLedger              -- the only writer of animal records
 │   │   ├── AssetLocks                -- in-memory locks on animals and eggs
 │   │   ├── QuoteStore                -- server-issued quote and request IDs with expiry
-│   │   └── ZoneQuery                 -- point-in-volume checks for regions and plots
+│   │   ├── ZoneQuery                 -- point-in-volume checks for regions and plots
+│   │   ├── CombatTags                -- written by CombatService, read by lower layers (in-combat checks)
+│   │   └── RaidContext               -- written by RaidService: raidId -> attacker, defender (read by PvP, Team)
 │   └── Data
 │       ├── ProfileSchema             -- default profile + version (see Schema - Player Profile)
 │       ├── Migrations                -- ordered migration functions (see Data Validation and Migration)

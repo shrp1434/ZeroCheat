@@ -52,7 +52,7 @@ stateDiagram-v2
         Stunned --> Ready: stun ends
     }
     InCombat --> Exploring: combat tag expires
-    InCombat --> Downed: HP 0 in a boss encounter
+    InCombat --> Downed: HP 0 in a world boss encounter
     InCombat --> Defeated: HP 0 elsewhere
     Downed --> InCombat: ally revive
     Downed --> Defeated: bleed-out timer ends
@@ -68,7 +68,7 @@ stateDiagram-v2
 | `Attacking` | 0.45 s per combo hit; walk speed 60% *(new)*. |
 | `Casting` | Special wind-up (0.35 s Power Strike, 0.5 s Ground Slam *(new)*); interrupted by stun without consuming the cooldown. |
 | `Dodging` | 0.3 s invulnerability, 12 studs, 4 s cooldown. |
-| `Downed` | Boss encounters only. 15 s bleed-out, ally revive channel 3 s restores 30% HP *(new)*. See [[Player Defeat and Penalties]]. |
+| `Downed` | World boss encounters only (PROPOSED option B-A). 15 s bleed-out, ally revive channel 3 s restores 30% HP *(new)*. See [[Player Defeat and Penalties]]. |
 | `Defeated` / `Respawning` | 5 s respawn delay, 3 s spawn protection broken by attacking *(new)*. Destination depends on battle type ([[Player Defeat and Penalties]]). |
 
 ## Companion state machine

@@ -132,12 +132,12 @@ end
 
 ```mermaid
 stateDiagram-v2
-    [*] --> Unlocked: "spawn at own base"
-    [*] --> Locked: "join or respawn away from base"
-    Unlocked --> Locked: "AtBaseChanged false"
-    Locked --> Unlocked: "AtBaseChanged true"
-    Unlocked --> Unlocked: "SetTeam accepted"
-    Locked --> Locked: "SetTeam rejected with E_TEAM_LOCKED"
+    [*] --> Unlocked: spawn at own base
+    [*] --> Locked: join or respawn away from base
+    Unlocked --> Locked: AtBaseChanged false
+    Locked --> Unlocked: AtBaseChanged true
+    Unlocked --> Unlocked: SetTeam accepted
+    Locked --> Locked: SetTeam rejected with E_TEAM_LOCKED
 ```
 
 - The lock is evaluated at request time from the **server's** at-base test; the `locked` runtime flag only drives the UI.

@@ -269,24 +269,24 @@ flowchart LR
 
 ```mermaid
 sequenceDiagram
-    participant P as "Player"
-    participant D as "DataService"
-    participant S as "DataStoreService"
-    participant X as "Other services"
-    P->>D: "PlayerAdded"
-    D->>S: "UpdateAsync acquire session lock"
-    S-->>D: "profile or new default"
-    D->>D: "migrate to current schema version"
-    D->>X: "ProfileLoaded signal"
-    D->>P: "Data/ProfileSnapshot"
-    loop "During play"
-        X->>D: "Mutate(player, reason, fn)"
-        D->>P: "Data/ProfileDelta (seq)"
+    participant P as Player
+    participant D as DataService
+    participant S as DataStoreService
+    participant X as Other services
+    P->>D: PlayerAdded
+    D->>S: UpdateAsync acquire session lock
+    S-->>D: profile or new default
+    D->>D: migrate to current schema version
+    D->>X: ProfileLoaded signal
+    D->>P: Data/ProfileSnapshot
+    loop During play
+        X->>D: Mutate(player, reason, fn)
+        D->>P: Data/ProfileDelta (seq)
     end
-    D->>S: "autosave every 120 s and priority save after high-value transactions"
-    P->>D: "PlayerRemoving"
-    D->>X: "ProfileReleasing signal (raids end, locks drop)"
-    D->>S: "final UpdateAsync and release lock"
+    D->>S: autosave every 120 s and priority save after high-value transactions
+    P->>D: PlayerRemoving
+    D->>X: ProfileReleasing signal (raids end, locks drop)
+    D->>S: final UpdateAsync and release lock
 ```
 
 ## 6. Cross-cutting concerns

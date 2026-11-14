@@ -181,14 +181,14 @@ end
 ```mermaid
 stateDiagram-v2
     [*] --> Loading
-    Loading --> Migrating: "lock acquired"
-    Loading --> Kicked: "lock held by live server after retries, or DataStore error after retries"
-    Migrating --> Active: "schemaVersion current"
-    Migrating --> Kicked: "migration error (profile untouched)"
-    Active --> Active: "autosave or priority save"
-    Active --> Releasing: "PlayerRemoving or BindToClose"
-    Releasing --> Released: "final save with lock cleared"
-    Releasing --> Released: "final save failed, logged as save_lost_risk"
+    Loading --> Migrating: lock acquired
+    Loading --> Kicked: lock held by live server after retries, or DataStore error after retries
+    Migrating --> Active: schemaVersion current
+    Migrating --> Kicked: migration error (profile untouched)
+    Active --> Active: autosave or priority save
+    Active --> Releasing: PlayerRemoving or BindToClose
+    Releasing --> Released: final save with lock cleared
+    Releasing --> Released: final save failed, logged as save_lost_risk
     Released --> [*]
     Kicked --> [*]
 ```
