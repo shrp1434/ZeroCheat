@@ -47,7 +47,7 @@ A **defence win** is a raid that ends `Failed` with reason `AttackerDefeated` or
 
 | Reward | Value *(new)* |
 |---|---|
-| Defence-win Cash | `DefenceWinCash = 200 × RegionMultiplier` of the defender's highest unlocked region (for example 200 in Whisperwood Forest, 1,500 in Frostfang Tundra, 2,300 in Starfall Sanctuary), from the system, not from the attacker |
+| Defence-win Cash | `DefenceWinCash = 200 × RegionMultiplier` of the defender's highest unlocked region (for example 200 in Whisperwood Forest, 900 in Frostfang Tundra, 2,300 in Starfall Sanctuary), from the system, not from the attacker |
 | Shield | Post-raid shield of 1,800 s ([[Shield Mechanics]]) |
 | Repair | All structures restored free ([[Raid Lifecycle and States]]) |
 | Record | Defence statistics on the base sign |
@@ -99,7 +99,7 @@ Rationale: partial Cash lets a defender rebuild towards what they lost (for exam
 | Defender | Shield 3,600 s, repair, compensation (if C-B approved) | Shield 1,800 s, repair, `DefenceWinCash` | Shield 1,800 s, repair | Nothing |
 
 ## Test hooks
-- Defence win in Frostfang Tundra pays exactly 1,500 Cash (200 × 4.5) once.
+- Defence win in Frostfang Tundra pays exactly 900 Cash (200 × 4.5) once.
 - A failed raid in which no defender damage was dealt pays no defence-win Cash.
 - With C-B enabled in a test build: a stolen Rare egg pays 450 Cash compensation; a flagged pair pays nothing.
 - Attacker never receives Cash from a raid.
