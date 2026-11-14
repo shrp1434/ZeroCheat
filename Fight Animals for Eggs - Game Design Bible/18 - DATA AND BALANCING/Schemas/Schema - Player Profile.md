@@ -2,7 +2,7 @@
 title: Schema - Player Profile
 type: data-schema
 category: data
-status: proposed
+status: mixed
 priority: P0
 owner: Data Architect
 last_updated: 2026-11-14

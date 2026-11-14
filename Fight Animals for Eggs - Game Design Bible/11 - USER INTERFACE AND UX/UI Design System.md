@@ -191,7 +191,7 @@ At most three toasts are visible; further toasts queue. Identical toasts within 
 | Component | Class structure | Notes |
 |---|---|---|
 | `Bar/Health` | `Frame` (track) → `Frame` (fill) + delayed "ghost" fill | Ghost fill trails damage by 0.4 s. Low-health state below 25% adds a pulsing icon, not only colour |
-| `Bar/XP` | Track + fill + `type.numeric` label "1,240 / 1,620 XP" | |
+| `Bar/XP` | Track + fill + `type.numeric` label "4,210 / 12,068 XP" | |
 | `Bar/Segmented` | Track with N phase markers | For [[UI - Boss Health Bar]]; N comes from boss config |
 | `Bar/Capacity` | Track + fill + "x / y" | Fill reaches `state.warning` at 80% and `state.danger` at 100% plus a "Full" label |
 | `Radial/Cooldown` | `ImageLabel` with `UIGradient` rotation mask over the button | Shows remaining seconds as text when > 1 s |

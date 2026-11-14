@@ -156,7 +156,7 @@ If more than 60 animals qualify for full AI, the server promotes those nearest t
 
 | ID | Test | Expected |
 |---|---|---|
-| SP-01 | Force 10,000 Secret window rolls | Success rate 10% ± 0.6% (99% CI) |
+| SP-01 | Force 10,000 Secret window rolls | Success rate within 10% ± 0.8% (99% interval, n = 10,000) |
 | SP-02 | Two players with PS 0 and PS 1000 on one server | Identical spawns (spawn RNG has no player input) |
 | SP-03 | Kite an animal 61 studs from spawn | Leash return and full HP reset |
 | SP-04 | Empty region for 300 s | Dormant; animals despawned; refill over 10 s on entry |

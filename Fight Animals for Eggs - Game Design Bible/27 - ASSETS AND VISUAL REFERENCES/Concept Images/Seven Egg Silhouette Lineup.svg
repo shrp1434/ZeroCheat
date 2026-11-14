@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="380" viewBox="0 0 1000 380" font-family="Arial, Helvetica, sans-serif">
+  <title>Seven egg silhouette lineup (PROPOSED proportions from Egg Art Direction)</title>
+  <defs><linearGradient id="prism" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FF6B9E"/><stop offset="0.33" stop-color="#FFF27A"/><stop offset="0.5" stop-color="#6DF2A8"/><stop offset="0.67" stop-color="#5CE1FF"/><stop offset="1" stop-color="#C77DFF"/></linearGradient></defs>
+  <rect width="1000" height="380" fill="#F5F0E6"/>
+  <text x="500" y="28" fill="#1B1B2F" font-size="18" font-weight="bold" text-anchor="middle">Egg silhouette ladder: each tier adds one silhouette feature (PROPOSED)</text>
+  <line x1="20" y1="300" x2="980" y2="300" stroke="#9AA5B1" stroke-width="2"/>
+  <g id="EGG-01">
+    <path d="M80.0,180.0 C140.9,180.0 137.2,300.0 80.0,300.0 C22.8,300.0 19.1,180.0 80.0,180.0 Z" fill="#1B1B2F"/>
+    <rect x="40" y="312" width="80" height="8" rx="4" fill="#9AA5B1" stroke="#1B1B2F" stroke-width="1"/>
+    <text x="80" y="340" fill="#1B1B2F" font-size="14" font-weight="bold" text-anchor="middle">Common</text>
+    <text x="80" y="358" fill="#5E6873" font-size="12" text-anchor="middle">EGG-01 · 2.0 st</text>
+  </g>
+  <g id="EGG-02">
+    <path d="M220.0,174.0 C284.0,174.0 280.1,300.0 220.0,300.0 C159.9,300.0 156.0,174.0 220.0,174.0 Z" fill="#1B1B2F"/>
+    <rect x="169.6" y="236.3" width="100.8" height="14" rx="6" fill="#1B1B2F"/>
+    <rect x="180" y="312" width="80" height="8" rx="4" fill="#4CC26A" stroke="#1B1B2F" stroke-width="1"/>
+    <text x="220" y="340" fill="#1B1B2F" font-size="14" font-weight="bold" text-anchor="middle">Uncommon</text>
+    <text x="220" y="358" fill="#5E6873" font-size="12" text-anchor="middle">EGG-02 · 2.1 st</text>
+  </g>
+  <g id="EGG-03">
+    <path d="M360.0,168.0 C426.0,168.0 422.0,300.0 360.0,300.0 C298.0,300.0 294.0,168.0 360.0,168.0 Z" fill="#1B1B2F"/>
+    <rect x="308.0" y="233.6" width="104.0" height="14" rx="6" fill="#1B1B2F"/>
+    <polygon points="305.0,230.6 296.0,240.6 305.0,250.6 308.0,240.6" fill="#1B1B2F"/>
+    <polygon points="415.0,230.6 424.0,240.6 415.0,250.6 412.0,240.6" fill="#1B1B2F"/>
+    <rect x="320" y="312" width="80" height="8" rx="4" fill="#3D8BFF" stroke="#1B1B2F" stroke-width="1"/>
+    <text x="360" y="340" fill="#1B1B2F" font-size="14" font-weight="bold" text-anchor="middle">Rare</text>
+    <text x="360" y="358" fill="#5E6873" font-size="12" text-anchor="middle">EGG-03 · 2.2 st</text>
+  </g>
+  <g id="EGG-04">
+    <path d="M500.0,156.0 C570.9,156.0 566.6,300.0 500.0,300.0 C433.4,300.0 429.1,156.0 500.0,156.0 Z" fill="#1B1B2F"/>
+    <rect x="444.1" y="228.2" width="111.8" height="14" rx="6" fill="#1B1B2F"/>
+    <polygon points="440.9,225.2 431.9,235.2 440.9,245.2 443.9,235.2" fill="#1B1B2F"/>
+    <polygon points="559.1,225.2 568.1,235.2 559.1,245.2 556.1,235.2" fill="#1B1B2F"/>
+    <polygon points="479.0,164.0 486.0,142.0 493.0,164.0" fill="#1B1B2F"/>
+    <polygon points="493.0,164.0 500.0,130.0 507.0,164.0" fill="#1B1B2F"/>
+    <polygon points="507.0,164.0 514.0,142.0 521.0,164.0" fill="#1B1B2F"/>
+    <rect x="460" y="312" width="80" height="8" rx="4" fill="#A55BFF" stroke="#1B1B2F" stroke-width="1"/>
+    <text x="500" y="340" fill="#1B1B2F" font-size="14" font-weight="bold" text-anchor="middle">Epic</text>
+    <text x="500" y="358" fill="#5E6873" font-size="12" text-anchor="middle">EGG-04 · 2.4 st</text>
+  </g>
+  <g id="EGG-05">
+    <path d="M640.0,144.0 C716.3,144.0 711.6,300.0 640.0,300.0 C568.4,300.0 563.7,144.0 640.0,144.0 Z" fill="#1B1B2F"/>
+    <rect x="579.9" y="222.8" width="120.2" height="14" rx="6" fill="#1B1B2F"/>
+    <polygon points="576.4,219.8 567.4,229.8 576.4,239.8 579.4,229.8" fill="#1B1B2F"/>
+    <polygon points="703.6,219.8 712.6,229.8 703.6,239.8 700.6,229.8" fill="#1B1B2F"/>
+    <polygon points="615.0,154.0 620.0,136.0 625.0,154.0" fill="#1B1B2F"/>
+    <polygon points="625.0,154.0 630.0,136.0 635.0,154.0" fill="#1B1B2F"/>
+    <polygon points="635.0,154.0 640.0,128.0 645.0,154.0" fill="#1B1B2F"/>
+    <polygon points="645.0,154.0 650.0,136.0 655.0,154.0" fill="#1B1B2F"/>
+    <polygon points="655.0,154.0 660.0,136.0 665.0,154.0" fill="#1B1B2F"/>
+    <path d="M582.2,183.0 Q561.4,237.6 591.5,287.5" fill="none" stroke="#1B1B2F" stroke-width="5"/>
+    <path d="M697.8,183.0 Q718.6,237.6 688.5,287.5" fill="none" stroke="#1B1B2F" stroke-width="5"/>
+    <rect x="600" y="312" width="80" height="8" rx="4" fill="#FFB020" stroke="#1B1B2F" stroke-width="1"/>
+    <text x="640" y="340" fill="#1B1B2F" font-size="14" font-weight="bold" text-anchor="middle">Legendary</text>
+    <text x="640" y="358" fill="#5E6873" font-size="12" text-anchor="middle">EGG-05 · 2.6 st</text>
+  </g>
+  <g id="EGG-06">
+    <path d="M780.0,132.0 C861.5,132.0 856.6,300.0 780.0,300.0 C703.4,300.0 698.5,132.0 780.0,132.0 Z" fill="#1B1B2F"/>
+    <rect x="715.8" y="217.4" width="128.5" height="14" rx="6" fill="#1B1B2F"/>
+    <polygon points="712.1,214.4 703.1,224.4 712.1,234.4 715.1,224.4" fill="#1B1B2F"/>
+    <polygon points="847.9,214.4 856.9,224.4 847.9,234.4 844.9,224.4" fill="#1B1B2F"/>
+    <path d="M742.9,296.0 Q687.4,290.0 691.1,241.2 Q712.1,269.8 755.3,266.4 Z" fill="#1B1B2F"/>
+    <path d="M817.1,296.0 Q872.6,290.0 868.9,241.2 Q847.9,269.8 804.7,266.4 Z" fill="#1B1B2F"/>
+    <ellipse cx="780.0" cy="118.0" rx="55.6" ry="8" fill="none" stroke="#1B1B2F" stroke-width="5"/>
+    <rect x="740" y="312" width="80" height="8" rx="4" fill="#FF4D8D" stroke="#1B1B2F" stroke-width="1"/>
+    <text x="780" y="340" fill="#1B1B2F" font-size="14" font-weight="bold" text-anchor="middle">Mythical</text>
+    <text x="780" y="358" fill="#5E6873" font-size="12" text-anchor="middle">EGG-06 · 2.8 st</text>
+  </g>
+  <g id="EGG-07">
+    <path d="M920.0,108.0 C1010.5,108.0 1005.0,300.0 920.0,300.0 C835.0,300.0 829.5,108.0 920.0,108.0 Z" fill="#1B1B2F"/>
+    <rect x="848.7" y="206.6" width="142.6" height="14" rx="6" fill="#1B1B2F"/>
+    <polygon points="844.6,203.6 835.6,213.6 844.6,223.6 847.6,213.6" fill="#1B1B2F"/>
+    <polygon points="995.4,203.6 1004.4,213.6 995.4,223.6 992.4,213.6" fill="#1B1B2F"/>
+    <polygon points="813.0,135.4 819.0,146.4 813.0,157.4 807.0,146.4" fill="#1B1B2F"/>
+    <polygon points="1029.7,164.2 1035.7,175.2 1029.7,186.2 1023.7,175.2" fill="#1B1B2F"/>
+    <polygon points="824.0,231.4 830.0,242.4 824.0,253.4 818.0,242.4" fill="#1B1B2F"/>
+    <polygon points="1018.7,254.4 1024.7,265.4 1018.7,276.4 1012.7,265.4" fill="#1B1B2F"/>
+    <polygon points="920.0,79.0 926.0,90.0 920.0,101.0 914.0,90.0" fill="#1B1B2F"/>
+    <rect x="880" y="312" width="80" height="8" rx="4" fill="url(#prism)" stroke="#1B1B2F" stroke-width="1"/>
+    <text x="920" y="340" fill="#1B1B2F" font-size="14" font-weight="bold" text-anchor="middle">Secret</text>
+    <text x="920" y="358" fill="#5E6873" font-size="12" text-anchor="middle">EGG-07 · 3.2 st</text>
+  </g>
+  <text x="500" y="375" fill="#5E6873" font-size="11" text-anchor="middle">Original diagram. Silhouettes drawn at 60 px per stud. Per-egg detail is owned by each Egg Type document.</text>
+</svg>

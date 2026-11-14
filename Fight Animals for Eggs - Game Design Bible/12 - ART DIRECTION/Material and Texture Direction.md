@@ -63,7 +63,7 @@ Custom looks for environment materials use `MaterialService` with `MaterialVaria
 | Mythical | `SurfaceAppearance` per species | ColorMap + NormalMap + RoughnessMap | 1,024×1,024 | Roughness picks out horns, claws, shells |
 | Secret | `SurfaceAppearance` per species | ColorMap + NormalMap + RoughnessMap + MetalnessMap | 1,024×1,024 | Metalness used only for small "ancient" inlays |
 
-### The shared palette atlas (`TEX_PaletteAtlas_Animals`)
+### The shared palette atlas (`ANM-000_PaletteAtlas_AT`)
 
 - 256×256 px, divided into a 16 × 16 grid of 16 px swatches.
 - Rows 0–9: flat colours grouped by hue family (browns, oranges, yellows, greens, blues, purples, pinks, greys, creams, near-darks).

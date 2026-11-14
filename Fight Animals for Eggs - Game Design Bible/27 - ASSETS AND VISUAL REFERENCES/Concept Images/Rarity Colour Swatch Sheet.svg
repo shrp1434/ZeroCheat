@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="300" viewBox="0 0 980 300" font-family="Arial, Helvetica, sans-serif">
+  <title>Rarity Colour Swatch Sheet (PROPOSED keys from Canonical Proposed Values section 1)</title>
+  <defs>
+    <linearGradient id="prism" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FF6B9E"/>
+      <stop offset="0.17" stop-color="#FFB84D"/>
+      <stop offset="0.33" stop-color="#FFF27A"/>
+      <stop offset="0.5" stop-color="#6DF2A8"/>
+      <stop offset="0.67" stop-color="#5CE1FF"/>
+      <stop offset="0.83" stop-color="#7A8CFF"/>
+      <stop offset="1" stop-color="#C77DFF"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="980" height="300" fill="#20264A"/>
+  <text x="490" y="30" fill="#FFFFFF" font-size="18" font-weight="bold" text-anchor="middle">Rarity colour keys, pips and badge shapes (PROPOSED)</text>
+
+  <!-- Common -->
+  <g transform="translate(20,50)">
+    <rect width="120" height="120" rx="14" fill="#9AA5B1" stroke="#0D1126" stroke-width="4"/>
+    <circle cx="60" cy="60" r="26" fill="#D5DCE3" stroke="#5E6873" stroke-width="4"/>
+    <text x="60" y="150" fill="#FFFFFF" font-size="15" font-weight="bold" text-anchor="middle">Common</text>
+    <text x="60" y="170" fill="#B9C1E6" font-size="13" text-anchor="middle">#9AA5B1</text>
+    <g fill="#9AA5B1" stroke="#1B1B2F" stroke-width="1"><circle cx="60" cy="190" r="5"/></g>
+  </g>
+
+  <!-- Uncommon -->
+  <g transform="translate(156,50)">
+    <rect width="120" height="120" rx="14" fill="#4CC26A" stroke="#0D1126" stroke-width="4"/>
+    <rect x="34" y="34" width="52" height="52" rx="12" fill="#B5EBC2" stroke="#2E8445" stroke-width="4"/>
+    <text x="60" y="150" fill="#FFFFFF" font-size="15" font-weight="bold" text-anchor="middle">Uncommon</text>
+    <text x="60" y="170" fill="#B9C1E6" font-size="13" text-anchor="middle">#4CC26A</text>
+    <g fill="#4CC26A" stroke="#1B1B2F" stroke-width="1"><circle cx="53" cy="190" r="5"/><circle cx="67" cy="190" r="5"/></g>
+  </g>
+
+  <!-- Rare -->
+  <g transform="translate(292,50)">
+    <rect width="120" height="120" rx="14" fill="#3D8BFF" stroke="#0D1126" stroke-width="4"/>
+    <polygon points="60,28 92,60 60,92 28,60" fill="#B3D3FF" stroke="#1F5BC2" stroke-width="4"/>
+    <text x="60" y="150" fill="#FFFFFF" font-size="15" font-weight="bold" text-anchor="middle">Rare</text>
+    <text x="60" y="170" fill="#B9C1E6" font-size="13" text-anchor="middle">#3D8BFF</text>
+    <g fill="#3D8BFF" stroke="#1B1B2F" stroke-width="1"><circle cx="46" cy="190" r="5"/><circle cx="60" cy="190" r="5"/><circle cx="74" cy="190" r="5"/></g>
+  </g>
+
+  <!-- Epic -->
+  <g transform="translate(428,50)">
+    <rect width="120" height="120" rx="14" fill="#A55BFF" stroke="#0D1126" stroke-width="4"/>
+    <polygon points="60,30 86,45 86,75 60,90 34,75 34,45" fill="#DCC2FF" stroke="#6E2FC9" stroke-width="4"/>
+    <text x="60" y="150" fill="#FFFFFF" font-size="15" font-weight="bold" text-anchor="middle">Epic</text>
+    <text x="60" y="170" fill="#B9C1E6" font-size="13" text-anchor="middle">#A55BFF</text>
+    <g fill="#A55BFF" stroke="#1B1B2F" stroke-width="1"><circle cx="39" cy="190" r="5"/><circle cx="53" cy="190" r="5"/><circle cx="67" cy="190" r="5"/><circle cx="81" cy="190" r="5"/></g>
+  </g>
+
+  <!-- Legendary -->
+  <g transform="translate(564,50)">
+    <rect width="120" height="120" rx="14" fill="#FFB020" stroke="#0D1126" stroke-width="4"/>
+    <path d="M34,40 L46,30 L60,40 L74,30 L86,40 L86,64 Q86,84 60,94 Q34,84 34,64 Z" fill="#FFE2A3" stroke="#C27A00" stroke-width="4"/>
+    <text x="60" y="150" fill="#FFFFFF" font-size="15" font-weight="bold" text-anchor="middle">Legendary</text>
+    <text x="60" y="170" fill="#B9C1E6" font-size="13" text-anchor="middle">#FFB020</text>
+    <g fill="#FFB020" stroke="#1B1B2F" stroke-width="1"><circle cx="32" cy="190" r="5"/><circle cx="46" cy="190" r="5"/><circle cx="60" cy="190" r="5"/><circle cx="74" cy="190" r="5"/><circle cx="88" cy="190" r="5"/></g>
+  </g>
+
+  <!-- Mythical -->
+  <g transform="translate(700,50)">
+    <rect width="120" height="120" rx="14" fill="#FF4D8D" stroke="#0D1126" stroke-width="4"/>
+    <g fill="#FFC2D8" stroke="#C2245E" stroke-width="3">
+      <circle cx="60" cy="40" r="12"/><circle cx="77" cy="50" r="12"/><circle cx="77" cy="70" r="12"/>
+      <circle cx="60" cy="80" r="12"/><circle cx="43" cy="70" r="12"/><circle cx="43" cy="50" r="12"/>
+      <circle cx="60" cy="60" r="10"/>
+    </g>
+    <text x="60" y="150" fill="#FFFFFF" font-size="15" font-weight="bold" text-anchor="middle">Mythical</text>
+    <text x="60" y="170" fill="#B9C1E6" font-size="13" text-anchor="middle">#FF4D8D</text>
+    <g fill="#FF4D8D" stroke="#1B1B2F" stroke-width="1"><circle cx="25" cy="190" r="5"/><circle cx="39" cy="190" r="5"/><circle cx="53" cy="190" r="5"/><circle cx="67" cy="190" r="5"/><circle cx="81" cy="190" r="5"/><circle cx="95" cy="190" r="5"/></g>
+  </g>
+
+  <!-- Secret -->
+  <g transform="translate(836,50)">
+    <rect width="120" height="120" rx="14" fill="#1B1B2F" stroke="url(#prism)" stroke-width="6"/>
+    <polygon points="60.0,26.0 65.7,46.1 84.0,36.0 73.9,54.3 94.0,60.0 73.9,65.7 84.0,84.0 65.7,73.9 60.0,94.0 54.3,73.9 36.0,84.0 46.1,65.7 26.0,60.0 46.1,54.3 36.0,36.0 54.3,46.1" fill="url(#prism)" stroke="#0E0E1C" stroke-width="2"/>
+    <circle cx="24" cy="24" r="2" fill="#FFFFFF"/><circle cx="98" cy="30" r="1.5" fill="#FFFFFF"/><circle cx="92" cy="100" r="2" fill="#FFFFFF"/><circle cx="20" cy="96" r="1.5" fill="#FFFFFF"/>
+    <text x="60" y="150" fill="#FFFFFF" font-size="15" font-weight="bold" text-anchor="middle">Secret</text>
+    <text x="60" y="170" fill="#B9C1E6" font-size="13" text-anchor="middle">#1B1B2F + prism</text>
+    <g fill="url(#prism)" stroke="#FFFFFF" stroke-width="1"><circle cx="18" cy="190" r="5"/><circle cx="32" cy="190" r="5"/><circle cx="46" cy="190" r="5"/><circle cx="60" cy="190" r="5"/><circle cx="74" cy="190" r="5"/><circle cx="88" cy="190" r="5"/><circle cx="102" cy="190" r="5"/></g>
+  </g>
+
+  <text x="490" y="285" fill="#B9C1E6" font-size="12" text-anchor="middle">Original diagram. Badge shapes: circle, rounded square, diamond, hexagon, crowned shield, six-petal rosette, eight-point star. Pip count = tier index + 1.</text>
+</svg>
