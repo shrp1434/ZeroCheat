@@ -2,7 +2,7 @@
 title: Implementation - Weighted Random Selection
 type: implementation
 category: eggs
-status: proposed
+status: mixed
 priority: P0
 owner: Senior Luau Engineer
 last_updated: 2026-11-14

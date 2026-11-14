@@ -73,7 +73,7 @@ Every Roblox engine API the vault relies on, with a one-line description of how 
 | `Workspace.StreamingEnabled` | Instance streaming for large world ([[Animal Scalability and Performance Budgets]]) | Verified (signature) | Streaming behaviour details unverified |
 | `Workspace:GetServerTimeNow()` | Shared server timeline for interpolation and lag compensation | Verified (signature) | |
 | `Player:GetNetworkPing()` | Lag compensation rewind | Verified (signature) | Unit (assumed seconds) **unverified** |
-| `buffer` library (`create`, `writeu8`, `writeu16`, `writef32`, `readu16`, `len`) | Compact state packets | Verified (signature) | Whether buffers pass through remotes is **unverified** on the page read; widely used in practice. Confirm in [[M02 - Core Project Setup]] |
+| `buffer` library (`create`, `writeu8`, `writeu16`, `writef32`, `readu16`, `len`) | Compact state packets | Verified (signature) | Only the six functions listed were checked. `writeu32`, `readu32`, `readu8` and `readf32`, used in [[Replication Strategy]], are **unverified**. Whether buffers pass through remotes is **unverified** on the page read; widely used in practice. Confirm in [[M02 - Core Project Setup]] |
 
 ## 4. Simulation, AI and spatial queries
 

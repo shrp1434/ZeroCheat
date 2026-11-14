@@ -175,23 +175,25 @@ Every proposed animal ability in one place. Both manual and automatic abilities 
 
 ## Shared status effects
 
-| Effect | Definition (PROPOSED) | Boss interaction |
+General crowd-control rules (stun immunity, slow floor, boss duration factor) are owned by the crowd-control section of [[Damage, Defence and Health Model]]. This table extends them to every effect used by animal abilities (**PROPOSED**).
+
+| Effect | Definition (PROPOSED) | Boss interaction (mini-bosses and world bosses) |
 |---|---|---|
-| Stun | Cannot move, attack or use abilities | Duration ×0.33, minimum 0.3 s |
-| Root | Cannot move; can attack | Converted to a 30% slow |
-| Freeze | A stun with an ice visual; ends early if hit for more than 25% max HP | Converted to a 50% slow |
-| Slow | Movement speed reduced by X% | Full effect, capped at 50% |
-| Chill | A stacking 25% slow; 3 stacks become a 1 s freeze | Stacks apply; the freeze becomes a slow |
-| Silence | Cannot use abilities | Bosses are immune |
-| Taunt | Forced to target the taunter | Bosses: they target the taunter for 50% of the duration |
-| Fear | Flees from the source | Bosses are immune |
-| Charm | Stops attacking | Bosses are immune |
-| Knock-up / knockback | Displacement | Bosses are immune to displacement; the damage still applies |
-| Bleed / poison / venom | Damage over time | Full effect |
+| Stun | Cannot move, attack or use abilities; the target is then immune to stuns for 4 s | Duration ×0.5 |
+| Root | Cannot move; can attack | Duration ×0.5 |
+| Freeze | A stun with an ice visual; ends early if hit for more than 25% of max HP; shares stun immunity | Converted to a 50% slow unless the ability says otherwise |
+| Slow | Movement speed reduced by X%; the strongest slow applies, slows do not stack; floor 40% of base speed | Duration ×0.5 |
+| Chill | A stacking 25% slow; 3 stacks become a 1 s freeze | Stacks apply; the freeze becomes a 50% slow |
+| Silence | Cannot use abilities | Immune |
+| Taunt | Forced to target the taunter | Half duration |
+| Fear | Flees from the source | Immune |
+| Charm | Stops attacking | Immune |
+| Knock-up / knockback | Displacement | Immune to displacement; the damage still applies |
+| Bleed / poison / venom | Damage over time; each tick goes through the full damage pipeline | Full effect |
 | DEF reduction | Target DEF −X% | Full effect; does not stack from the same source |
 | Camouflage | Ignored by enemy auto-targeting until it attacks | — |
 
-Crowd-control diminishing returns (**PROPOSED**): the same target hit by hard control (stun, freeze or root) within 6 s of a previous one receives 50%, then 25%, then immunity for 4 s.
+Where an individual ability states its own boss behaviour (for example 0.3 s on bosses), the ability text wins, provided it is no stronger than the ×0.5 rule.
 
 ## Related documents
 

@@ -94,7 +94,7 @@ export type BossInstance = {
 export type RewardResolver = (player: Player, instance: BossInstance) -> () -- Q-015; nil by default
 ```
 
-**PROPOSED values introduced here:** reward eligibility threshold of **10% of max HP** for mini-bosses (same as kill credit, D-040) and **3% of max HP** for world bosses (a full 16-player server should not exclude contributors); abandoned-boss reset after **30 s** with no player inside `ArenaRadius`; world boss despawn if not defeated within **15 min** of spawning.
+**PROPOSED values introduced here:** reward eligibility threshold of **5% of current scaled max HP** (or 50% of the fight in combat in the arena) for mini-bosses and **2.5%** (or 60 s in combat in the arena) for world bosses, as owned by [[Boss Design Overview]]; contribution counts damage plus animal healing and shielding 1:1, so a full 16-player server does not exclude contributors. Other values: abandoned-boss reset after **30 s** with no player inside `ArenaRadius`; world boss despawn if not defeated within **15 min** of spawning.
 
 ## Public API
 
@@ -153,7 +153,7 @@ Schedules are per server and start from server boot with a random offset (0–10
 |---|---|
 | Mini-boss respawns 600 s after defeat | Unit with fake clock |
 | World boss announcement precedes spawn by 120 s | Unit |
-| Player with 2.9% world boss damage not eligible; 3% eligible | Unit |
+| Player with 2.4% world boss contribution and 50 s in combat not eligible; 2.5% eligible; 0% but 60 s in combat eligible | Unit |
 | Leaving and rejoining does not grant eligibility twice for one spawn | Integration |
 | Unique defeat recorded once per player per boss for PS | Unit ([[Service - LuckService]]) |
 | Boss reset after 30 s abandoned | Integration |

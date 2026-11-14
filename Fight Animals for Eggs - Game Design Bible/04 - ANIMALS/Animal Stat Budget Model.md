@@ -115,7 +115,7 @@ Abilities are the main source of identity. They are written as a percentage of A
 | Rare, Epic | 2 (one auto, one manual) | 150–260% ATK | 7–22 s |
 | Legendary, Mythical, Secret | 2 plus a passive | 190–360% ATK | 7–24 s |
 
-Hard crowd control (stuns, freezes, roots) is capped at 1.5 s against normal enemies and is reduced or converted to slows against bosses ([[Boss AI]]).
+Crowd-control caps against normal enemies: area stuns and freezes at most 1.5 s; roots at most 2.0 s; single-target stuns at most 3.0 s (reserved for Secret signature abilities). After a stun the target is immune to stuns for 4 s, and all durations are halved on bosses ([[Damage, Defence and Health Model]], [[Boss AI]]).
 
 ## 7. Wild scaling
 

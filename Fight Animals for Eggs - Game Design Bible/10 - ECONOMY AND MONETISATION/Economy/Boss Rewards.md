@@ -79,7 +79,7 @@ Camping check (Region 1, modelling values): 6 Bramblehorn defeats (≈ 9 minutes
 
 | Rule | Proposal |
 |---|---|
-| Contribution threshold | Bosses use **2% of max HP** or **20 s of active combat within range** (whichever comes first), not 10%, so up to 16 players can all qualify (**PROPOSED** variation of D-040) |
+| Contribution threshold | Bosses use the boss credit rule in [[Boss Design Overview]]: mini-bosses ≥ 5% of scaled max HP (or 50% of the fight in combat), world bosses ≥ 2.5% (or 60 s in combat), not 10%, so a full server can qualify (**PROPOSED** variation of D-040) |
 | Once per spawn | Server-side set of UserIds per spawn instance |
 | First-kill tracking | `unlocks.bossesDefeated[bossId] = timestamp` in [[Schema - Unlocks and Boss Progress]] |
 | Server hopping for world bosses | Eligibility for world boss repeat rewards limited to one claim per boss per real-time spawn window across servers (MemoryStoreService key per user and boss, **PROPOSED**) |

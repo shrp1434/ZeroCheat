@@ -36,7 +36,7 @@ The Progression Score (PS) is the single number, 0–1000, that drives [[Dynamic
 | Player level | 4 per level | level 100 | 400 | 40 % | `level` in [[Schema - Player Progression]] | Level 1 counts as 4 points |
 | Unique animals discovered | 3 per species | 60 species | 180 | 18 % | Discovered set in [[Schema - Discovery Index]] | Discovery = defeated in the wild (D-029). **Owned** status does not count |
 | Unique mini-bosses defeated | 10 each | 8 | 80 | 8 % | Boss first-defeat flags in [[Schema - Unlocks and Boss Progress]] | First defeat only |
-| Unique world bosses defeated | 20 each | 4 | 80 | 8 % | Same schema | First defeat only; must meet the shared kill-credit rule (≥ 10 % damage, D-040) |
+| Unique world bosses defeated | 20 each | 4 | 80 | 8 % | Same schema | First defeat only; must meet the boss credit rule in [[Boss Design Overview]] (≥ 2.5 % contribution or 60 s in combat) |
 | Regions unlocked beyond the first | 20 each | 7 | 140 | 14 % | Region unlock flags in [[Schema - Unlocks and Boss Progress]] | Whisperwood Forest and the hub do not count |
 | Base progression | `round(120 × TotalModuleLevels / 44)` | 44 levels | 120 | 12 % | Module levels in [[Schema - Base Data]] | 7 modules × 5 + Egg Merging Station 5 + Plot Expansion 4 = 44 |
 | **Total** | | | **1000** | **100 %** | | |

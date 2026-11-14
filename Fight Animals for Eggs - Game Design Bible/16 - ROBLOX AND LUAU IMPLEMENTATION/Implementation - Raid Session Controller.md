@@ -58,15 +58,21 @@ stateDiagram-v2
 
 ## 2. Outcomes and commit policy
 
-| Outcome | Trigger | Claims | Status |
+> [!important] Rule owner: [[Raid Disconnection Handling]] and [[Egg Theft Rules]]
+> **Secured is final; provisional is reversible.** Each stolen egg is committed the moment the attacker secures it at the extraction point, through its own journalled transfer, and stays with the attacker whatever the outcome. The table below therefore governs only **held animals** (captured, not yet transferred) and any egg still being carried, which always returns to the vault.
+
+> [!warning] Code below is a simplified prototype
+> The illustrative `RaidSession` code escrows `claimedEggs` until `endRaid`. Before [[M15 - Base Raids]], replace the egg path with a per-egg commit at securing (`HandleSecureEgg`, as in [[Service - RaidService]]), and keep escrow only for held animals.
+
+| Outcome | Trigger | Held animals | Status |
 |---|---|---|---|
-| `Success` | Success condition defined in [[Raid Lifecycle and States]] | Commit | **PROPOSED** |
+| `Success` | Success condition defined in [[Raid Lifecycle and States]] | Transfer (≤ 3) | **PROPOSED** |
 | `Failed` | Attacker knocked out or defeated | Void (returned) | **PROPOSED** |
-| `TimedOut` | Configured duration elapsed with the attacker still in the raid | Commit secured claims | **PROPOSED** |
-| `AttackerDisconnected` | Attacker leaves the server | Void | **PROPOSED**: prevents "disconnect to escape" from keeping loot without finishing |
-| `DefenderDisconnected` | Defender leaves the server | Raid ends at once; **no further theft**; claims secured before the disconnect commit | **PROPOSED** per offline protection (D-024); confirmation needed (Q-906) |
+| `TimedOut` | Configured duration elapsed with the attacker still in the raid | Transfer if the vault was breached ([[Raid Lifecycle and States]]), otherwise return | **PROPOSED** |
+| `AttackerDisconnected` | Attacker leaves the server | Return to the defender (secured eggs stay with the attacker) | **PROPOSED**: prevents "disconnect to escape" from keeping loot without finishing |
+| `DefenderDisconnected` | Defender leaves the server | Raid ends at once; **no further theft**; animals held from a raid already breached transfer, otherwise return | **PROPOSED** per offline protection (D-024); confirmation needed (Q-906) |
 | `Cancelled` | Server shutdown before `Active`, admin action | Void | **PROPOSED** |
-| `ServerShutdown` during `Active` | `BindToClose` | Void | **PROPOSED**: both saves cannot be guaranteed in the shutdown window |
+| `ServerShutdown` during `Active` | `BindToClose` | Return (secured eggs stay) | **PROPOSED**: both saves cannot be guaranteed in the shutdown window |
 
 > [!warning] UNDECIDED (Q-906)
 > Committing claims secured before a defender disconnect removes the incentive for defenders to quit to cancel a raid (combat logging). The alternative, returning everything, is friendlier to defenders with unstable connections. The code reads `RaidConfig.COMMIT_ON_DEFENDER_DISCONNECT`; the prototyping value is `true`.

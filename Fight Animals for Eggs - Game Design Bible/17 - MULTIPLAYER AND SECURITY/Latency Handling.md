@@ -2,7 +2,7 @@
 title: Latency Handling
 type: architecture
 category: networking
-status: proposed
+status: mixed
 priority: P0
 owner: Multiplayer and Network Engineer
 last_updated: 2026-11-14

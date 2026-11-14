@@ -99,10 +99,10 @@ export type Profile = {
 
 | Constant | Value |
 |---|---|
-| DataStore name | `PlayerProfiles_v1` |
+| DataStore name | `PlayerProfile_v1` (full key layout in [[Data Architecture Overview]]) |
 | Key | `u_<UserId>` (well under the 50-character key limit) |
-| Autosave interval | 120 s per player, staggered |
-| Session lock stale after | 600 s without refresh |
+| Autosave interval | 90 s ±15 s per player, staggered (owned by [[Save, Load and Recovery]]) |
+| Session lock stale after | 300 s without refresh (owned by [[Save, Load and Recovery]]) |
 | Lock acquire retries | 5 attempts, 1/2/4/8/16 s backoff |
 | Priority save minimum spacing | 10 s per player (later requests coalesce) |
 
@@ -193,7 +193,7 @@ stateDiagram-v2
     Kicked --> [*]
 ```
 
-- **Acquire:** `UpdateAsync` reads the record; if `meta.lockJobId` is another server and `lockTime` is newer than 600 s, the transform returns `nil` (no write) and DataService retries. Otherwise it writes `lockJobId = game.JobId`, `lockTime = os.time()`.
+- **Acquire:** `UpdateAsync` reads the record; if `meta.lockJobId` is another server and `lockTime` is newer than 300 s, the transform returns `nil` (no write) and DataService retries. Otherwise it writes `lockJobId = game.JobId`, `lockTime = os.time()`.
 - **Autosave:** `UpdateAsync` that verifies `lockJobId == game.JobId` before writing; if not, the lock was taken over and this server must stop saving and kick the player (`data.lock_lost`).
 - **Final save:** on `PlayerRemoving`, fire `ProfileReleasing`, wait one frame for services to finish, save with `lockJobId = nil`.
 - **Shutdown:** `BindToClose` saves every remaining profile in parallel threads and waits until all finish or the shutdown window ends (Roblox allows about 30 s; *unverified* exact figure).
@@ -224,7 +224,7 @@ stateDiagram-v2
 | `Mutate` that errors after a partial write restores state and emits no delta | Unit |
 | Writing to an undeclared section errors in Studio mode | Unit |
 | Two servers (two Studio test sessions) cannot both hold the lock; second join is rejected until release | Integration ([[Test Cases - Persistence]]) |
-| Lock older than 600 s is taken over; the old server detects `lock_lost` on its next save | Integration |
+| Lock older than 300 s is taken over; the old server detects `lock_lost` on its next save | Integration |
 | Kill the server process mid-session; on rejoin, data is at most one autosave old, and nothing granted by a priority-saved transaction is lost | Integration |
 | Migration from every past schema version produces a valid current profile | Unit, one fixture per version |
 | Client view never contains `meta` or server-only fields | Unit |

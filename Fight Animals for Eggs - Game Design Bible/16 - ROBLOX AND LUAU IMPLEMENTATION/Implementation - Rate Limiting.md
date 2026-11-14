@@ -2,7 +2,7 @@
 title: Implementation - Rate Limiting
 type: implementation
 category: security
-status: proposed
+status: mixed
 priority: P0
 owner: Security Engineer
 last_updated: 2026-11-14
@@ -57,23 +57,22 @@ local Players = game:GetService("Players")
 local ServerStorage = game:GetService("ServerStorage")
 
 local Config = require(ServerStorage.Config.RateLimitConfig)
---[[ RateLimitConfig (PROPOSED):
-	BUCKETS = {
-		Quote   = { capacity = 5,  refill = 1.0 },
-		Economy = { capacity = 3,  refill = 0.5 },
-		Combat  = { capacity = 12, refill = 8 },
-		Ability = { capacity = 6,  refill = 4 },
-		Command = { capacity = 8,  refill = 4 },
-		Raid    = { capacity = 10, refill = 5 },
-		Team    = { capacity = 4,  refill = 1 },
-		UI      = { capacity = 10, refill = 2 },
-	},
-	GLOBAL = { capacity = 60, refill = 30 },
-	VIOLATION_DECAY_PER_SECOND = 0.1,
-	THRESHOLD_LOG = 50,
-	THRESHOLD_KICK = 150,
-	DROPPED_REQUEST_WEIGHT = 1,
-]]
+--  RateLimitConfig (PROPOSED):
+-- 	BUCKETS = {
+-- 		Quote   = { capacity = 5,  refill = 1.0 },
+-- 		Economy = { capacity = 3,  refill = 0.5 },
+-- 		Combat  = { capacity = 12, refill = 8 },
+-- 		Ability = { capacity = 6,  refill = 4 },
+-- 		Command = { capacity = 8,  refill = 4 },
+-- 		Raid    = { capacity = 10, refill = 5 },
+-- 		Team    = { capacity = 4,  refill = 1 },
+-- 		UI      = { capacity = 10, refill = 2 },
+-- 	},
+-- 	GLOBAL = { capacity = 60, refill = 30 },
+-- 	VIOLATION_DECAY_PER_SECOND = 0.1,
+-- 	THRESHOLD_LOG = 50,
+-- 	THRESHOLD_KICK = 150,
+-- 	DROPPED_REQUEST_WEIGHT = 1,
 
 type Bucket = { tokens: number, last: number, capacity: number, refill: number }
 type PlayerState = {

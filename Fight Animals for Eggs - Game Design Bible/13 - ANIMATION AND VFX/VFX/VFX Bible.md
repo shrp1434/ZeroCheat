@@ -83,7 +83,7 @@ The player can lock a tier in [[UI - Settings]]. Animation LOD shares the same t
 | Beam `Segments` | 8 | 12 | 16 |
 
 Notes:
-- Roblox limits how many Highlights render at once (reported as 31 in documentation we have not verified, *unverified*). Our High budget of 12 stays well below any such limit.
+- Roblox limits how many Highlights render at once (commonly cited as 31; *unverified*). Our High budget of 12 stays well below that figure.
 - Highlight reserve: 1 slot is always kept for the local damage flash; during a raid, up to 6 slots go to stealable outlines ([[Animation - Animal Defeat and Victory]]).
 - An authored `Rate` above the cap is clamped by the VFX controller at runtime; authors must design effects that still read at the Low cap.
 

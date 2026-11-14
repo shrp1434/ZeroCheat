@@ -99,7 +99,7 @@ export type AIAgent = {
 | Companion auto-target radius | 30 studs around the owner |
 | Companion follow distance | 6 to 10 studs behind the owner, formation by slot |
 | Companion teleport-to-owner | If more than 80 studs from the owner for 3 s |
-| Manual Attack command duration | Until the target is defeated, out of 80 studs, or a new command |
+| Manual Attack command duration | Until the target is defeated, leashes or becomes invalid, a new command arrives, or 8 s pass ([[Targeting and Command System]]) |
 | LOD radii | Active ≤ 80 studs (or in combat), Near ≤ 200, Far ≤ 400, Dormant beyond |
 | Tick rates | 10 / 4 / 1 / 0 Hz |
 | Pathfinding budget | 8 `ComputeAsync` per second per server, FIFO queue, companions first |

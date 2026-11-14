@@ -312,7 +312,7 @@ The wild Rabbit has `200 × 1.0 × 0.85 × 2.0 × 1.0 = 340` HP (wild ×2.0, reg
 
 | Value | Proposal | Why |
 |---|---|---|
-| Player basic reach | 6 studs | Slightly above animal melee range (5) so the player can hit the target their animals engage |
+| Player basic reach | 7 studs in a 90° forward arc | Owned by [[Player Combat]]; slightly above animal melee range (5) so the player can hit the target their animals engage |
 | Power Strike reach | 7 studs | Single-target lunge |
 | Range tolerance | +3 studs plus target radius | Absorbs replication jitter ([[Latency Handling]]) |
 | Timing tolerance | 0.05 s early | Absorbs server frame and network jitter |

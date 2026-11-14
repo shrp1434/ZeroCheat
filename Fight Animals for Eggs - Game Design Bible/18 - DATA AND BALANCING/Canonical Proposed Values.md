@@ -160,8 +160,8 @@ Family totals: Big Cats 6, Forest Animals 11, Safari Animals 6, Aquatic Animals 
 | Player walk speed | 16 studs/s (Roblox default) |
 | Global cooldown between manual animal abilities | 0.5 s |
 | Region scaling of DEF | None. DEF is not region-scaled, so DEF/(DEF+100) stays bounded |
-| Hard crowd-control cap | 1.5 s against normal enemies; reduced or converted to slows against bosses ([[Animal Abilities Catalogue]]) |
-| Crowd-control diminishing returns | Hard CC on the same target within 6 s: 100% → 50% → 25% → 4 s immunity |
+| Crowd-control caps | Area stuns and freezes ≤ 1.5 s; roots ≤ 2.0 s; single-target stuns ≤ 3.0 s (Secret signature abilities only) |
+| Crowd-control resistance | 4 s stun immunity after a stun; slows do not stack, floor 40% of base speed; all CC durations ×0.5 on bosses ([[Damage, Defence and Health Model]]) |
 | Ability count by rarity | Common/Uncommon 1; Rare/Epic 2 (1 auto + 1 manual); Legendary and above 2 + passive |
 | Leash range (wild animals) | 60 studs from spawn point, then reset to full HP |
 | Combat tag timeout | 8 s without dealing or receiving damage |

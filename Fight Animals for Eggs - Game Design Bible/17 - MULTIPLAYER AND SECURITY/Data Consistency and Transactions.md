@@ -2,7 +2,7 @@
 title: Data Consistency and Transactions
 type: architecture
 category: data
-status: proposed
+status: mixed
 priority: P0
 owner: Multiplayer and Network Engineer
 last_updated: 2026-11-14
@@ -51,10 +51,10 @@ Each profile record stores a lock:
 
 | Parameter | Value | Status |
 |---|---|---|
-| Autosave interval (also refreshes `heartbeatAt`) | 60 s | **PROPOSED** |
+| Autosave interval (also refreshes `heartbeatAt`) | 90 s ±15 s ([[Save, Load and Recovery]]) | **PROPOSED** |
 | Lock timeout (stale lock may be taken over) | 300 s since `heartbeatAt` | **PROPOSED** |
 | Load retries when the lock is held | 5 attempts, back-off 2, 4, 6, 8, 10 s | **PROPOSED** |
-| Coalesced transaction saves | ≤ 1 write per player per 6 s | **PROPOSED** |
+| Coalesced transaction saves | ≤ 1 write per player per 7 s ([[Save, Load and Recovery]]) | **PROPOSED** |
 
 ```lua
 --!strict
@@ -62,7 +62,7 @@ Each profile record stores a lock:
 -- ServerScriptService/Services/DataService/SessionLock (excerpt)
 
 local DataStoreService = game:GetService("DataStoreService")
-local store = DataStoreService:GetDataStore("PlayerProfiles_v1")
+local store = DataStoreService:GetDataStore("PlayerProfile_v1")
 
 local LOCK_TIMEOUT = 300
 local JOB = game.JobId
@@ -139,11 +139,11 @@ Standard write budget per server: `60 + numPlayers × 40` requests per minute (c
 
 | Source | Worst case per minute at 16 players | Notes |
 |---|---:|---|
-| Autosave (60 s) | 16 | |
-| Coalesced transaction saves (≤ 1 per 6 s per player) | 160 | Only if every player trades constantly |
+| Autosave (90 s) | 11 | |
+| Coalesced transaction saves (≤ 1 per 7 s per player) | 137 | Only if every player trades constantly |
 | Raid commits (journal + index + 2 profiles) | ~8 | Assumes ≤ 2 raids per minute per server |
 | Leave saves | ≤ 16 | |
-| **Total** | **≈ 200** | ~29% of budget, leaving headroom for retries |
+| **Total** | **≈ 172** | ~25% of budget, leaving headroom for retries |
 
 ## 4. Saving rules
 

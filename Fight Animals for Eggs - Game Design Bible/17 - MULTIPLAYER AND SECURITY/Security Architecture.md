@@ -2,7 +2,7 @@
 title: Security Architecture
 type: architecture
 category: security
-status: proposed
+status: mixed
 priority: P0
 owner: Security Engineer
 last_updated: 2026-11-14

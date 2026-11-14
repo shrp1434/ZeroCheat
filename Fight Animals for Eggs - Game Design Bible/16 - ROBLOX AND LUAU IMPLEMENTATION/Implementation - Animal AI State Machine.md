@@ -2,7 +2,7 @@
 title: Implementation - Animal AI State Machine
 type: implementation
 category: combat
-status: proposed
+status: mixed
 priority: P0
 owner: Senior Luau Engineer
 last_updated: 2026-11-14
@@ -366,7 +366,7 @@ return Brain
 
 ## 5. Manual target commands
 
-`TargetCommand { targetId }` from the owner sets `commandTarget` on all three companions (or one, if the command names a slot). The server validates that the target exists, is hostile, and is within 60 studs of the owner (**PROPOSED**). Commands expire when the target dies or after 15 s (**PROPOSED**). Design in [[Targeting and Command System]].
+`TargetCommand { targetId }` from the owner sets `commandTarget` on all three companions (or one, if the command names a slot). The server validates that the target exists, is hostile, and is within 40 studs of the owner (**PROPOSED**, owned by [[Targeting and Command System]]). Commands expire when the target dies, leashes or becomes invalid, or after 8 s (**PROPOSED**). Design in [[Targeting and Command System]].
 
 ## 6. Test hooks
 

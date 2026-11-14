@@ -86,7 +86,7 @@ Direction: **C→S** client to server, **S→C** server to client (owner, nearby
 | `Combat/UseSpecial` | RE | C→S | `{ specialId: "PowerStrike" \| "GroundSlam" \| "RallyCry", aim: Vector3, targetId: string? }` | Unlocked by level (L1, L10, L25); cooldown 6 / 12 / 25 s; same range rules | 2/s (3) | `Combat/CooldownSync` + hit confirms, or rejection |
 | `Combat/Dodge` | RE | C→S | `{ dir: Vector3 }` | Unit vector; 4 s cooldown | 1/s (2) | Server grants 0.3 s invulnerability window |
 | `Combat/UseAnimalAbility` | RE | C→S | `{ slot: 1 \| 2 \| 3, targetId: string? }` | Slot occupied by a live companion; ability is manual; its cooldown and the 0.5 s global cooldown elapsed | 4/s (6) | AnimalAIService casts; `Combat/CooldownSync` |
-| `Combat/CommandTarget` | RE | C→S | `{ mode: "Attack" \| "Follow" \| "Hold", targetId: string? }` | Target exists, hostile to the player, within 80 studs (**PROPOSED**) | 5/s (8) | Companions retarget (D-009) |
+| `Combat/CommandTarget` | RE | C→S | `{ mode: "Attack" \| "Follow" \| "Hold", targetId: string? }` | Target exists, hostile to the player, within 40 studs of the player (**PROPOSED**, [[Targeting and Command System]]) | 4/s (8) | Companions retarget (D-009) |
 | `Combat/HitConfirm` | URE | S→C nearby | `{ h: { { a: string, t: string, d: int, k: int } } }` (batched, ≤ 8 hits, < 1,000 bytes) | — | ≤ 20 messages/s per client | Damage numbers and hit VFX only |
 | `Combat/EntityState` | RE | S→C nearby | `{ entityId: string, state: "KnockedOut" \| "Defeated" \| "Revived" \| "Despawned" }` | — | — | Animation and UI state |
 | `Combat/CooldownSync` | RE | S→C owner | `{ key: string, readyAt: number }` | — | — | Cooldown UI |

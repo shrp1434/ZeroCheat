@@ -113,8 +113,9 @@ Every boss attack that deals more than a basic hit's damage is telegraphed. Thes
 
 | Boss type | Eligible if *(new unless stated)* |
 |---|---|
-| Mini-boss | Dealt ≥ 10% of max HP directly or through animals (same rule as wild animals, D-040, PROPOSED) **or** was in the arena and in combat for 50% of the fight |
-| World boss | Contribution ≥ 2% of max HP, where contribution = damage + 0.5 × healing done + 0.5 × damage absorbed by own Tank companion; **or** in the arena and in combat for at least 60 s |
+| Mini-boss | Contribution ≥ 5% of current scaled max HP **or** was in the arena and in combat for 50% of the fight (thresholds owned by [[Boss Design Overview]]) |
+| World boss | Contribution ≥ 2.5% of current scaled max HP **or** in the arena and in combat for at least 60 s |
+| Contribution | Damage dealt by the player and their animals, plus healing and shielding by the player's animals, counted 1:1 ([[Boss Design Overview]]). The 10% wild-animal threshold (D-040) does not apply to bosses |
 | Both | Once per player per spawn (canonical). Defeated players who return before the boss dies keep their contribution. |
 
 What eligible players receive is **UNDECIDED** ([[Open Questions#Q-015]]); see [[Combat Rewards]] and [[Boss Rewards]].

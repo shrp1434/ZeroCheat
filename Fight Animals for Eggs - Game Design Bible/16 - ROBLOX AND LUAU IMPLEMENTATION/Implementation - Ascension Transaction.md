@@ -74,22 +74,21 @@ local Registry = require(script.Parent.Parent.Registry)
 local AscensionConfig = require(ReplicatedStorage.Shared.Config.AscensionConfig)
 local RosterConfig = require(ReplicatedStorage.Shared.Config.RosterConfig)
 
---[[ AscensionConfig (PROPOSED values from Canonical Proposed Values §9):
-	MAX_LEVEL = 5,
-	DUPLICATES = {
-		Common    = { 1, 2, 3, 4, 5 },
-		Uncommon  = { 1, 2, 3, 3, 4 },
-		Rare      = { 1, 1, 2, 3, 3 },
-		Epic      = { 1, 1, 2, 2, 3 },
-		Legendary = { 1, 1, 1, 2, 2 },
-		Mythical  = { 1, 1, 1, 1, 2 },
-		Secret    = { 1, 1, 1, 1, 1 },
-	},
-	FEE_BASE = { Common = 100, Uncommon = 200, Rare = 400, Epic = 800,
-	             Legendary = 1600, Mythical = 3200, Secret = 6400 },
-	VARIANT_DUPLICATE_POLICY = "reject", -- UNDECIDED (Q-902)
-	REQUIRE_AT_BASE = false,
-]]
+--  AscensionConfig (PROPOSED values from Canonical Proposed Values §9):
+-- 	MAX_LEVEL = 5,
+-- 	DUPLICATES = {
+-- 		Common    = { 1, 2, 3, 4, 5 },
+-- 		Uncommon  = { 1, 2, 3, 3, 4 },
+-- 		Rare      = { 1, 1, 2, 3, 3 },
+-- 		Epic      = { 1, 1, 2, 2, 3 },
+-- 		Legendary = { 1, 1, 1, 2, 2 },
+-- 		Mythical  = { 1, 1, 1, 1, 2 },
+-- 		Secret    = { 1, 1, 1, 1, 1 },
+-- 	},
+-- 	FEE_BASE = { Common = 100, Uncommon = 200, Rare = 400, Epic = 800,
+-- 	             Legendary = 1600, Mythical = 3200, Secret = 6400 },
+-- 	VARIANT_DUPLICATE_POLICY = "reject", -- UNDECIDED (Q-902)
+-- 	REQUIRE_AT_BASE = false,
 
 export type AscendRequest = {
 	targetUid: string,

@@ -283,7 +283,7 @@ sequenceDiagram
         X->>D: Mutate(player, reason, fn)
         D->>P: Data/ProfileDelta (seq)
     end
-    D->>S: autosave every 120 s and priority save after high-value transactions
+    D->>S: autosave every 90 s ±15 s and priority save after high-value transactions
     P->>D: PlayerRemoving
     D->>X: ProfileReleasing signal (raids end, locks drop)
     D->>S: final UpdateAsync and release lock
