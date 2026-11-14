@@ -68,17 +68,17 @@ Luck shifts probability **within** a pool from Standard towards Scarce and Elusi
 flowchart TD
     A["Player selects 1 to 5 eggs"] --> B["Client sends RequestHatchOdds with eggIds"]
     B --> C{"Server pre-check: count 1 to 5, eggs owned, location valid"}
-    C -- "Fail" --> X1["Reject with reason code"]
-    C -- "Pass" --> D["Server computes in-pool odds per rarity at current P"]
+    C -->|"Fail"| X1["Reject with reason code"]
+    C -->|"Pass"| D["Server computes in-pool odds per rarity at current P"]
     D --> E["Issue oddsVersion token bound to eggIds and odds"]
     E --> F["Client shows per-egg pool odds and confirm button"]
     F --> G{"Player confirms?"}
-    G -- "No" --> X2["Nothing changes"]
-    G -- "Yes" --> H["CommitHatch with token, eggIds, requestId"]
+    G -->|"No"| X2["Nothing changes"]
+    G -->|"Yes"| H["CommitHatch with token, eggIds, requestId"]
     H --> I{"Idempotent, token current, not in combat, capacity free?"}
-    I -- "Stale" --> D
-    I -- "Other failure" --> X3["Reject with reason code"]
-    I -- "Pass" --> J["Sample one animal per egg, independently"]
+    I -->|"Stale"| D
+    I -->|"Other failure"| X3["Reject with reason code"]
+    I -->|"Pass"| J["Sample one animal per egg, independently"]
     J --> K["Atomic update: remove eggs, add animal instances, mark owned, audit"]
     K --> L["Return results, client plays hatch animation"]
 ```

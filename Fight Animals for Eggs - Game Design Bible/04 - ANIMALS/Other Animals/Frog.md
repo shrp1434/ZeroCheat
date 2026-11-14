@@ -123,7 +123,7 @@ Rarity presentation (frame, aura, nameplate colour) follows [[Rarity Visual Lang
 | Requirement | Specification |
 |---|---|
 | Body plan and rig | Hopper (amphibian); see [[Animal Rig Standards]] |
-| Triangle budget (LOD0) | ≤ 1,500 triangles (PROPOSED by rarity); LOD1 50%, LOD2 20% |
+| Triangle budget (LOD0) | ≤ 2,000 triangles (PROPOSED by rarity; +20% for the XL size class); LOD1 50%, LOD2 20% |
 | Construction | Low-poly flat-shaded MeshParts; colour via vertex colour or palette texture; no photographic textures ([[Animal Modelling Principles]]) |
 | Silhouette test | Must be identifiable as a black silhouette at 64 px |
 | Materials | Base: SmoothPlastic look; rarity and variant layers are applied at runtime ([[Material and Texture Direction]]) |

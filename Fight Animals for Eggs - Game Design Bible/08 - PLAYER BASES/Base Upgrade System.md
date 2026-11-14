@@ -131,7 +131,7 @@ Remote validation and rate limits: [[Implementation - Remote Validation Layer]],
 
 | Step | Detail |
 |---|---|
-| Templates | `ServerStorage.ModuleTemplates.<ModuleId>.L1`..`L5` (and `L0` for the Egg Crate). Asset IDs `MOD-01`..`MOD-09` with level suffix, e.g. `MOD-06-L3` (**PROPOSED**, to be added to the [[Asset Register]]) |
+| Templates | `ServerStorage.ModuleTemplates.<ModuleId>.L1`..`L5` (and `L0` for the Egg Crate). Asset IDs `MOD-01`..`MOD-10` with level suffix, e.g. `MOD-06-L3` (**PROPOSED**; MOD-09 is Plot Expansion and MOD-10 is the Base Core in the [[Asset Register]]) |
 | Swap | Clone new level, parent at the slot `CFrame`, then destroy the old model after the animation's "reveal" frame so there is never an empty slot |
 | Attributes | `ModuleId`, `Level`, `OwnerUserId`, tag `BaseModule` |
 | Client effects | The server fires one `ModuleUpgraded` event to nearby clients; VFX are client-side only ([[VFX Bible]]) |

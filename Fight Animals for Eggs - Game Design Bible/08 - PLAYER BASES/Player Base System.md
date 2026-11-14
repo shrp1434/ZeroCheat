@@ -49,7 +49,7 @@ The base is the "return point" of every session loop: fight in the world, return
 
 | Module | Asset ID (PROPOSED) | Role | Base cost (Cash) | Effect summary |
 |---|---|---|---:|---|
-| Base Core (fixed infrastructure, free) | MOD-09 | Spawn point, team-change fallback, plot boundary anchor | 0 | Not upgradeable, not a module slot |
+| Base Core (fixed infrastructure, free) | MOD-10 | Spawn point, team-change fallback, plot boundary anchor | 0 | Not upgradeable, not a module slot |
 | [[Module - Egg Vault]] | MOD-02 | Base egg storage security | 1,500 | Holds base storage; starts at a free L0 "Egg Crate" |
 | [[Module - Animal Pens]] | MOD-01 | Housing, showcase and guard posts | 1,000 | Q-008 / Q-033 dependent |
 | [[Module - Defence Station]] | MOD-03 | Gates, traps, turrets | 2,000 | Slows and damages raiders |

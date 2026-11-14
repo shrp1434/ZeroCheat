@@ -35,14 +35,14 @@ flowchart LR
     C --> D["Egg of rolled rarity"]
     D --> E["Backpack (10) or Base storage (50)"]
     E --> F{"Merge or hatch?"}
-    F -- "Merge 3 same rarity" --> G["Egg Merging Station"]
+    F -->|"Merge 3 same rarity"| G["Egg Merging Station"]
     G --> H["1 egg of next rarity"]
     H --> E
-    F -- "Hatch 1 to 5" --> I["Animal from rarity pool"]
+    F -->|"Hatch 1 to 5"| I["Animal from rarity pool"]
     I --> J{"Already owned?"}
-    J -- "No" --> K["New animal in collection"]
-    J -- "Yes" --> L["Duplicate available for ascension"]
-    E -. "Base eggs only, eligible raid" .-> M["Stolen by raider"]
+    J -->|"No"| K["New animal in collection"]
+    J -->|"Yes"| L["Duplicate available for ascension"]
+    E -.->|"Base eggs only, eligible raid"| M["Stolen by raider"]
 ```
 
 | Stage | What is random | Owning document | Server service |

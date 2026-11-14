@@ -47,7 +47,7 @@ Egg rolls and hatches are randomised rewards. This page defines how the game dis
 | 2 | Show per-animal in-pool percentages before every hatch confirmation (expandable per egg) | **CONFIRMED** principle; layout **PROPOSED** |
 | 3 | Odds shown are the player's actual current odds, computed by the server, not a generic table | **CONFIRMED** principle |
 | 4 | State plainly that odds improve with progression: *"Your odds improve as you progress. These are your exact odds right now."* | **PROPOSED** copy |
-| 5 | Never round a non-zero value to 0 %; show at least two significant figures | **PROPOSED** |
+| 5 | Never round a non-zero value to 0 %; show at least two significant figures; round with a largest-remainder method so displayed values sum to exactly 100 % | **PROPOSED** |
 | 6 | If the odds change before confirmation, show old and new values and require a new confirmation | **PROPOSED** (D-041) |
 | 7 | A "View odds" link is available from the shop, shrine and hatch screens at all times | **PROPOSED** |
 | 8 | Marketing, store descriptions and social posts may quote only "odds from X % to Y % depending on progress", never the baseline alone | **PROPOSED** |

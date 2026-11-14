@@ -345,10 +345,12 @@ Variant names (examples from the owner): Golden, Diamond, Rainbow, Shadow, Neon.
 
 | Rarity | LOD0 triangle budget | LOD1 | LOD2 | Production priority |
 |---|---:|---:|---:|---|
-| Common | 1,500 | 50% | 20% | P0 |
-| Uncommon | 2,000 | 50% | 20% | P0 |
-| Rare | 2,500 | 50% | 20% | P1 |
-| Epic | 3,500 | 50% | 20% | P1 |
-| Legendary | 4,500 | 50% | 20% | P1 |
-| Mythical | 6,000 | 50% | 20% | P2 |
-| Secret | 7,500 | 50% | 20% | P2 |
+| Common | 2,000 | 50% | 20% | P0 |
+| Uncommon | 2,500 | 50% | 20% | P0 |
+| Rare | 3,000 | 50% | 20% | P1 |
+| Epic | 4,000 | 50% | 20% | P1 |
+| Legendary | 5,000 | 50% | 20% | P1 |
+| Mythical | 6,500 | 50% | 20% | P2 |
+| Secret | 8,000 | 50% | 20% | P2 |
+
+The XL companion size class gets +20%. The companion size cap is 9.0 studs. Full modelling rules are in [[Animal Modelling Principles]]. The production priority column is design priority; the [[Asset Register]] schedules production in waves.

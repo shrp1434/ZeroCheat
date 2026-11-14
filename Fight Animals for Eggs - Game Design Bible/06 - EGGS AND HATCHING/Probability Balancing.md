@@ -87,8 +87,8 @@ flowchart LR
     B --> C["Regenerate luck and pool tables"]
     C --> D["Validation checklist"]
     D --> E{"Owner approval for odds changes?"}
-    E -- "No" --> A
-    E -- "Yes" --> F["Bump configVersion"]
+    E -->|"No"| A
+    E -->|"Yes"| F["Bump configVersion"]
     F --> G["Deploy, invalidate all oddsVersion tokens"]
     G --> H["Changelog entry and player-facing notice"]
     H --> I["Telemetry watch for 7 days"]

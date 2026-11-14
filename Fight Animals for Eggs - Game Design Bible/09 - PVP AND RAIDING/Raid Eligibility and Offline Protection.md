@@ -25,7 +25,7 @@ Who may raid whom, the precise meaning of "online", and what happens when the de
 > - Raid matchmaking: who can raid whom ([[Open Questions#Q-029]]).
 > - Raid opt-in mechanism (Q-207, new; options in [[Base Raiding System#Raid opt-in]]).
 
-## Definition of "online"
+## Definition of online
 
 > [!info] PROPOSED definition
 > A defender is **online for raid purposes** at time *t* if, and only if, **all** of the following are true on the server that hosts their base:

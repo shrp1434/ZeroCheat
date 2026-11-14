@@ -28,7 +28,7 @@ What keeps a player coming back after the first week, and what the game looks li
 | Week 1 | Unlock Coral Coast (Region 4) | ≈ 36 h to level 28 | [[Region Unlock Progression]] | Station L3 (Epic → Legendary merges) becomes available |
 | Week 1–2 | Reach the luck pivot (PS 300) | ≈ 33 h | [[Progression Score Specification]] | Baseline odds from here on |
 | Month 1 | First Legendary team at A3+ | Lion A5 ≈ 54 h with merging at baseline | [[Ascension System]] | |
-| Month 1–2 | Skyreach Peaks, Station L4 | ≈ 153 h cumulative to level 65 entry of Region 7 | [[Egg Merging Station]] | First Mythical merges |
+| Month 1–2 | Skyreach Peaks, Station L4 | ≈ 108 h to level 52, plus a world boss | [[Egg Merging Station]] | First Mythical merges |
 | Month 2–3 | Starfall Sanctuary, Station L5 | ≈ 206 h to level 80, plus 2 world bosses | [[Region - Starfall Sanctuary]] | Secret merging unlocked |
 | Long | First copy of every animal (owned 60 / 60) | Hardest: [[Tyrannosaurus Rex]], about 6.5 Secret eggs ≈ 9 h of endgame income with merging (36.6 h direct) | [[Animal Collection System]] | |
 | Long | Discover all 60 species in the wild | Bounded by Secret rare-spawn events (10 % per 45-min window ⇒ one spawn per 7.5 h per spawn point on average) | [[Wild Animal Spawning and Respawn]], [[Animal Index Feature Specification]] | Also the last 18 % of PS |
@@ -68,8 +68,8 @@ Endgame activities and their purpose:
 ## 3. Risks and recommendations
 
 > [!warning] Risks (PROPOSED assessment)
-> 1. **Merging compresses the apex.** The whole Secret set at A5 takes about 64 hours at endgame. If fees are raised as recommended in [[Egg Merging#Merge shortcut analysis]], this rises towards 130–270 hours depending on the option chosen.
-> 2. **Discovery depends on presence.** Secret wild spawns appear about once per 7.5 hours per spawn point. Players who cannot be online at the right moment are locked out of the last 12 PS points per Secret species. Recommendation: rare-spawn windows aligned to server time with in-game forecasts (no Robux shortcuts).
+> 1. **Merging compresses the apex.** The whole Secret set at A5 takes about 64 hours at endgame. If fees are raised as recommended in [[Egg Merging#Merge shortcut analysis]], this rises to roughly 130–150 hours under option B.
+> 2. **Discovery depends on presence.** Secret wild spawns appear about once per 7.5 hours per spawn point. Players who cannot be online at the right moment miss the last 3 PS points per Secret species (12 for all four) and the index entries. Recommendation: rare-spawn windows aligned to server time with in-game forecasts (no Robux shortcuts).
 > 3. **Nothing to spend Cash on after completion.** Once the base is maxed and the roster is ascended, Cash loses purpose. Live operations must add sinks that do not break fairness: cosmetic base themes for Cash, new animals and regions ([[Content Expansion Guidelines]]).
 > 4. **PS is near-maxed long before completion.** Most players hit P ≥ 0.9 around level 85–95; late-game luck growth is therefore flat. That is fine; the odds plateau should be communicated as "maximum luck reached" in [[UI - Progression Interface]].
 > 5. **Optional systems must stay optional.** No long-term goal may require PvP or raiding (D-023, D-024). Raid-related goals remain side goals.

@@ -91,12 +91,12 @@ The full rules are owned by [[Egg Theft Rules]] and [[Base Raiding System]]; thi
 ```mermaid
 flowchart TD
     A["Egg rolled or merged"] --> B{"Location"}
-    B -- "Backpack" --> C["Safe: never stealable"]
-    B -- "Base storage" --> D{"Owner online and raid eligible?"}
-    D -- "No" --> E["Safe: offline bases cannot be raided"]
-    D -- "Yes" --> F{"Raid succeeds and egg is taken?"}
-    F -- "No" --> G["Egg remains"]
-    F -- "Yes" --> H["Egg moves to raider base storage"]
+    B -->|"Backpack"| C["Safe: never stealable"]
+    B -->|"Base storage"| D{"Owner online and raid eligible?"}
+    D -->|"No"| E["Safe: offline bases cannot be raided"]
+    D -->|"Yes"| F{"Raid succeeds and egg is taken?"}
+    F -->|"No"| G["Egg remains"]
+    F -->|"Yes"| H["Egg moves to raider base storage"]
 ```
 
 ## 6. Server validation

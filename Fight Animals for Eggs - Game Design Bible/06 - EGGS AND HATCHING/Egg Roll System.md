@@ -48,7 +48,7 @@ The roll panel always shows, **before** the confirm button becomes active:
 3. The destination and the free slots there.
 4. A short line: *"Your odds improve as you progress. These are your exact odds for this roll."* (copy **PROPOSED**; see [[Randomised Reward Compliance]]).
 
-**Display format (PROPOSED).** Show each value to at least two significant figures and never round a non-zero value to 0 (for example a beginner's Secret odds show as **0.0043 %**, not 0.00 %). Percentages are shown to 4 decimal places where needed; a footnote states that rounding may make the visible sum differ from 100 % by up to 0.01 %.
+**Display format (PROPOSED).** Show each value to at least two significant figures and never round a non-zero value to 0 (for example a beginner's Secret odds show as **0.0043 %**, not 0.00 %). Percentages are shown to 4 decimal places where needed, and displayed values are rounded with a largest-remainder method so that the numbers the player sees also sum to exactly 100 % (rule shared with [[Dynamic Luck Probability Tables]]).
 
 ### Worked odds at four progression levels
 
@@ -74,20 +74,20 @@ flowchart TD
     C --> D["Server stores snapshot and issues oddsVersion token"]
     D --> E["Client shows odds, price, destination, free slots"]
     E --> F{"Player confirms?"}
-    F -- "No" --> X1["Panel closes, nothing charged"]
-    F -- "Yes" --> G["Client sends CommitRoll with token, count, destination, requestId"]
+    F -->|"No"| X1["Panel closes, nothing charged"]
+    F -->|"Yes"| G["Client sends CommitRoll with token, count, destination, requestId"]
     G --> H{"requestId already processed?"}
-    H -- "Yes" --> X2["Return original result, no second charge"]
-    H -- "No" --> I{"Token current and odds unchanged?"}
-    I -- "No, stale" --> J["Reject StaleOdds and return new odds and token"]
+    H -->|"Yes"| X2["Return original result, no second charge"]
+    H -->|"No"| I{"Token current and odds unchanged?"}
+    I -->|"No, stale"| J["Reject StaleOdds and return new odds and token"]
     J --> E
-    I -- "Yes" --> K{"Cash, capacity, location and state valid?"}
-    K -- "No" --> X3["Reject with reason code, nothing charged"]
-    K -- "Yes" --> L["Sample rarity for each egg with server Random"]
+    I -->|"Yes"| K{"Cash, capacity, location and state valid?"}
+    K -->|"No"| X3["Reject with reason code, nothing charged"]
+    K -->|"Yes"| L["Sample rarity for each egg with server Random"]
     L --> M["Atomic profile update: deduct Cash, add eggs, write audit entry"]
     M --> N{"Save succeeded?"}
-    N -- "No" --> X4["Roll back in memory, reject SaveFailed, nothing charged"]
-    N -- "Yes" --> O["Return results, client plays roll animation"]
+    N -->|"No"| X4["Roll back in memory, reject SaveFailed, nothing charged"]
+    N -->|"Yes"| O["Return results, client plays roll animation"]
 ```
 
 ## 4. Server-authoritative sequence

@@ -141,7 +141,7 @@ Eight mini-bosses in region order, then four world bosses. Art hooks in [[Boss A
 
 Boss trophy statuettes for the Trophy Hall (12, ≤ 1,500 tris each) are tracked as sub-assets `BOS-##_Trophy` ([[Asset Naming Conventions]]).
 
-## 4. Base modules (MOD-01 to MOD-09)
+## 4. Base modules (MOD-01 to MOD-10)
 
 Visual ladder in [[Base Art Direction]]. Budgets are for the L5 form; each level is a separate model.
 
@@ -156,6 +156,7 @@ Visual ladder in [[Base Art Direction]]. Budgets are for the L5 form; each level
 | MOD-07 | [[Module - Trophy Hall]] | Boss trophy display | As above + 12 plinths | 5 level models + `BOS-##_Trophy` | Wood → stone → Foil → Glass → Marble | As above | Identity `#E3A33B` | Hub preset | As above | As above | As above | 2,500 → 8,500 tris + trophies | P1 |
 | MOD-08 | [[Egg Merging Station]] | Egg merging (CONFIRMED, D-020); changes appearance per level | Output cradle fits 3.2-stud Secret egg | 5 separate level models with 3 input sockets + 1 output cradle | L1 Wood/Grass; L2 Slate/Basalt; L3 Glass/Ice; L4 Foil/Metal/Neon; L5 Marble/Foil/ForceField | SA 512 (L1–L3), SA 1024 (L4–L5) | `#C9A46A`, `#FF9F45`, `#5CE1FF`, `#6DF2A8`→`#C77DFF`, prismatic | Hub preset + station PointLight | [[Animation - Egg Merge]] | Merge FX per tier | [[Sound - Eggs]] | 3,000 → 9,000 tris | P0 (wave 1 for L1–L2; wave 2 for L3–L5) |
 | MOD-09 | Plot Expansion ([[Base Layout and Plot Expansion]]) | Ground, borders and markers for 4 stages | Plot sizes per layout doc | Ground tiles, border walls, gateposts | Grass, Cobblestone, Slate, WoodPlanks | Base atlas 256 | `#A3835B` | Hub preset | [[Animation - Base Upgrades]] | Expansion FX | As above | ≤ 8,000 tris at stage 4 | P1 |
+| MOD-10 | Base Core ([[Player Base System]]) | Fixed, free base infrastructure: spawn point, team-change fallback point, plot boundary anchor | Fits one 32 × 32-stud slot | Single model, not upgradeable | Slate, Wood, Grass | Base atlas 256 | `#A3835B` | Hub preset | — | Team-change confirmation FX | [[Sound - Base and Raid Alerts]] | ≤ 3,000 tris | P0 (wave 1) |
 
 Base total budget: ≤ 70,000 triangles fully upgraded ([[Base Art Direction]]).
 

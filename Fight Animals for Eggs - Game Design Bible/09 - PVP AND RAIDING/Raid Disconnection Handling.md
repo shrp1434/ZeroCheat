@@ -21,7 +21,7 @@ What happens when the attacker, the defender, both, or the server drop during a 
 > Offline bases cannot be raided (D-024). This document must never allow a theft from a defender who is offline.
 
 > [!info] PROPOSED
-> All rules here are proposals. "Offline" uses the precise definition in [[Raid Eligibility and Offline Protection#Definition of "online"]].
+> All rules here are proposals. "Offline" uses the precise definition in [[Raid Eligibility and Offline Protection#Definition of online]].
 
 ## Principles
 1. **Secured is final; provisional is reversible.** An egg is final only once secured at the extraction point. A captured animal is final only when a successful raid resolves. Everything else rolls back.
@@ -76,8 +76,10 @@ Rules (PROPOSED):
 
 ```lua
 -- Illustrative Luau, not tested in Roblox Studio.
+local HttpService = game:GetService("HttpService")
+
 local function commitTransfer(raid, item, fromProfile, toProfile): boolean
-	local txId = HttpServiceLikeGuid() -- placeholder for a GUID generator; choose a real API in implementation
+	local txId = HttpService:GenerateGUID(false)
 	local ok = Journal.writeCommitted(txId, {
 		raidId = raid.id, item = item.id, from = fromProfile.userId, to = toProfile.userId,
 	})

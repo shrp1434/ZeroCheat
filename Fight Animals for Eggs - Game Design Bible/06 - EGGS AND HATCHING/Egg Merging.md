@@ -69,14 +69,14 @@ All values **PROPOSED**. The station's physical form at each level is in [[Egg M
 flowchart TD
     A["Player at own base opens station"] --> B["Select 3 eggs of one rarity"]
     B --> C{"Station level unlocks this tier?"}
-    C -- "No" --> X1["Show required level and gate"]
-    C -- "Yes" --> D["Show fee, inputs and output"]
+    C -->|"No"| X1["Show required level and gate"]
+    C -->|"Yes"| D["Show fee, inputs and output"]
     D --> E{"Confirm?"}
-    E -- "No" --> X2["Nothing changes"]
-    E -- "Yes" --> F["CommitMerge with eggIds and requestId"]
+    E -->|"No"| X2["Nothing changes"]
+    E -->|"Yes"| F["CommitMerge with eggIds and requestId"]
     F --> G{"Server validation"}
-    G -- "Fail" --> X3["Reject with reason code"]
-    G -- "Pass" --> H["Atomic: remove 3 eggs, deduct fee, add 1 egg, audit"]
+    G -->|"Fail"| X3["Reject with reason code"]
+    G -->|"Pass"| H["Atomic: remove 3 eggs, deduct fee, add 1 egg, audit"]
     H --> I["Play merge animation 2.5 to 6 s by tier"]
 ```
 

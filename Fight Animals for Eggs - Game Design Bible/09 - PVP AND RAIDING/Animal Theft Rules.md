@@ -50,7 +50,7 @@ An animal that is not knocked out can never be captured, whatever its HP.
 | 1. Knock-out | Guard reaches 0 HP and collapses into a glowing capture marker at its position ([[Animation - Raid Interactions]]). It stays down for the rest of the raid. Field revive is disabled for raid defenders ([[Animal Combat Behaviour#Knock-out and recovery]]). |
 | 2. Channel | Attacker holds a `ProximityPrompt` within 6 studs for `AnimalCaptureChannelSeconds` = 3. Taking damage or moving more than 6 studs away cancels it. |
 | 3. Hold | On completion the animal enters the raid's **hold**: removed from the field, shown to both players as held. Captures are possible in `Active` and `Breached`. |
-| 4. Resolve | In `Resolving`, if the raid is `Succeeded`, every held animal (at most 3) is transferred to the attacker in one transaction. If not, every held animal returns to the defender. |
+| 4. Resolve | In `Resolving`, if the raid is `Succeeded`, every held animal (at most 3) is transferred to the attacker in one transaction. If not, every held animal returns to the defender. Exception: if the raid ended because the **attacker** disconnected, held animals return even after a breach ([[Raid Disconnection Handling]]). |
 
 ### Defender counterplay: rescue *(new)*
 The defender can channel 3 s on a knocked-out guard to **rescue** it. A rescued guard is sent back to the pens, cannot fight again this raid and cannot be captured. Rescue is the defender's way to protect a valuable animal after it falls.

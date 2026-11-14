@@ -96,13 +96,13 @@ flowchart TD
     C --> D["Duplicates auto-selected: unascended first, then lowest A"]
     D --> E["Preview: stars, stat deltas, ability delta, visual preview, fee"]
     E --> F{"Any selected duplicate is ascended, a variant or equipped?"}
-    F -- "Yes" --> G["Extra warning and second confirmation"]
-    F -- "No" --> H["Single confirmation"]
+    F -->|"Yes"| G["Extra warning and second confirmation"]
+    F -->|"No"| H["Single confirmation"]
     G --> I["Client sends CommitAscension"]
     H --> I
     I --> J{"Server validation"}
-    J -- "Fail" --> K["Show reason, nothing consumed"]
-    J -- "Pass" --> L["Atomic transaction"]
+    J -->|"Fail"| K["Show reason, nothing consumed"]
+    J -->|"Pass"| L["Atomic transaction"]
     L --> M["Ascension animation, new stars and stats"]
 ```
 

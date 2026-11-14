@@ -107,8 +107,8 @@ flowchart TD
     A["Wild animal defeated"] --> B["CombatService awards XP to each credited player"]
     B --> C["ProgressionService adds XP"]
     C --> D{"XP >= XP to next level?"}
-    D -- "No" --> E["Save XP"]
-    D -- "Yes" --> F["Level up, carry over remainder, repeat check"]
+    D -->|"No"| E["Save XP"]
+    D -->|"Yes"| F["Level up, carry over remainder, repeat check"]
     F --> G["Recompute HP, DEF, Strength"]
     G --> H["Recompute Progression Score"]
     H --> I["Invalidate oddsVersion tokens"]
