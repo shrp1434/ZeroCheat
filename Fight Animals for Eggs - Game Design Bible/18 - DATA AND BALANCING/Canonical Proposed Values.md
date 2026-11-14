@@ -293,7 +293,7 @@ Five ascension levels, A1–A5, shown as stars.
 | 4 | Aurora Crucible | 250,000 | Region 6 unlocked + 1 world boss defeated | Legendary→Mythical | 8,000 |
 | 5 | Celestial Convergence Altar | 1,000,000 | Region 8 unlocked | Mythical→Secret | 25,000 |
 
-Merging happens at the player's base. Input eggs may come from the backpack or base storage. The output egg goes to base storage (capacity always frees by two). Merge presentation: 2.5–6 s animation by tier, no wait timer (timers are an alternative, Q-034).
+Merging happens at the player's base. Input eggs may come from the backpack or base storage (base storage first). The output egg goes to base storage, or to a freed backpack slot when base storage is full (see §17). Merge presentation: 2.5–6 s animation by tier, no wait timer (timers are an alternative, Q-034).
 
 ## 11. Egg storage (CONFIRMED start values; expansion PROPOSED / UNDECIDED)
 
@@ -354,3 +354,75 @@ Variant names (examples from the owner): Golden, Diamond, Rainbow, Shadow, Neon.
 | Secret | 8,000 | 50% | 20% | P2 |
 
 The XL companion size class gets +20%. The companion size cap is 9.0 studs. Full modelling rules are in [[Animal Modelling Principles]]. The production priority column is design priority; the [[Asset Register]] schedules production in waves.
+
+## 17. Cross-section values reconciled during the vault audit (PROPOSED)
+
+These values were introduced by individual sections and then reconciled so every document agrees. The owning document holds the detail; change it there and here together.
+
+### Combat
+
+| Value | Proposal | Owner |
+|---|---|---|
+| Stat stacking | `Species stat × (1 + 0.08 × ascension) × (1 + 0.04 × Training Grounds level)`; bonuses multiply across sources and add within one source (Q-953) | [[Damage, Defence and Health Model]] |
+| Incoming damage reduction cap | 60% | [[Damage, Defence and Health Model]] |
+| Rounding | Damage to the nearest integer, minimum 1; Cash floored to an integer; Cash clamped at 10^15 | [[Damage, Defence and Health Model]] · [[Schema - Economy]] |
+| Player melee reach | 7 studs in a 90° arc, +3 studs server tolerance | [[Player Combat]] |
+| Target commands | Within 40 studs of the player; last 8 s or until the target dies, leashes or becomes invalid; 4 per second | [[Targeting and Command System]] |
+| Companion acquisition radius | 30 studs from the player | [[Animal Combat Behaviour]] |
+| Companion leash | Disengage at 45 studs; teleport to the player at 90 studs or after 4 s stuck | [[Animal Combat Behaviour]] |
+| Boss credit | Contribution = damage plus animal healing and shielding, counted 1:1. Mini-boss ≥ 5% of scaled max HP or ≥ 50% of the fight in combat; world boss ≥ 2.5% or ≥ 60 s in combat. The 10% wild rule (D-040) does not apply to bosses | [[Boss Design Overview]] |
+| Boss announcements | Every world boss is announced 2 minutes ahead | [[Boss Design Overview]] |
+
+### Eggs, merging and storage
+
+| Value | Proposal | Owner |
+|---|---|---|
+| Rolled egg destination | Backpack first, then base storage (Q-301) | [[Egg Roll System]] |
+| Bulk roll | All-or-nothing; needs 5 free slots; the UI offers "Roll ×N" (Q-1003) | [[Egg Roll System]] |
+| Merge inputs and output | Inputs are taken from base storage first; the output goes to base storage, or to a freed backpack slot when base storage is full (Q-954). This replaces "capacity always frees by two" in §10 | [[Egg Merging]] |
+| Odds token | 60 s timestamp buckets; the current and previous bucket are accepted (token life 60–120 s); single use | [[Implementation - Dynamic Luck Calculation]] |
+| Roll and hatch quote | Server quote lives 60 s; a repeated confirm within 30 s returns the original result | [[Service - EggService]] |
+| Odds display | At least two significant figures plus "about 1 in N" below 1%; a non-zero tier is never shown as 0%; rounded values use largest-remainder so they total 100% | [[Randomised Reward Compliance]] |
+| Hatch with full animal storage | Refused; the egg is not consumed (Q-508) | [[Hatch System]] |
+| Consumable animals | Equipped, guarding and favourite animals can never be consumed by ascension | [[Ascension System]] |
+| Progression Score | Never decreases. When content is added, PS inputs are rescaled to keep their share, using `max(old, new)` for one season so no player's odds drop | [[Progression Score Specification]] |
+
+### Raids
+
+| Value | Proposal | Owner |
+|---|---|---|
+| Commit rule | Secured is final: each egg is committed when secured at the extraction point; held animals transfer only when a successful raid resolves | [[Raid Disconnection Handling]] |
+| Concurrency | One attacker per raid; one raid per defender; at most 2 concurrent raids per server | [[Base Raiding System]] |
+| Stolen eggs | Go to the attacker's base storage; theft refused when it is full (Q-951) | [[Egg Theft Rules]] |
+| Raid parameters with no approved value | `RaidDurationSeconds` (Q-012) and `MaxEggsStolenPerRaid` (Q-013) ship as `nil`; while either is `nil`, the server refuses every raid | [[Service - RaidService]] |
+
+### Persistence and platform
+
+| Value | Proposal | Owner |
+|---|---|---|
+| Profile store | DataStore `PlayerProfile_v1`, key `u_<UserId>` | [[Data Architecture Overview]] |
+| Autosave | Every 90 s ±15 s, staggered; at most one write per player per 7 s | [[Save, Load and Recovery]] |
+| Session lock | Stale after 300 s without refresh; 5 retries with 1/2/4/8/16 s backoff | [[Save, Load and Recovery]] |
+| DataStore request budget | `60 + players × 40` per minute (checked against Roblox documentation on 2026-11-14; re-check before launch) | [[Roblox API Reference Notes]] |
+| AI level of detail | 10 Hz within 80 studs; 4 Hz to 200; 1 Hz to 400; dormant beyond | [[Implementation - Animal AI State Machine]] |
+| Remote rate limit | Per-remote token buckets plus a global ceiling of 60 requests per player | [[Implementation - Rate Limiting]] |
+| Anti-cheat | Violation scoring: log, then kick at a high score; never an automated ban (Q-905) | [[Exploit Prevention]] |
+
+### Models and assets
+
+| Value | Proposal | Owner |
+|---|---|---|
+| Base asset IDs | MOD-01 to MOD-07 modules; MOD-08 Egg Merging Station; MOD-09 Plot Expansion; MOD-10 Base Core | [[Asset Register]] |
+| Base area | "Homestead Isles": a ring of 16 plot islands around the hub | [[Base Layout and Plot Expansion]] |
+| Rarity colour note | Secret `#1B1B2F` is nearly invisible on dark panels; always pair it with the prismatic stroke | [[Rarity Visual Language]] |
+
+### Known balance findings (from the Python models of these formulas, not from the game)
+
+| Finding | Where analysed |
+|---|---|
+| Full merging makes a Secret egg about 8× cheaper than direct rolling (about 120,700 Cash against 1,000,000 at P = 0.30) | [[Egg Merging Station]] · [[Expected Value Calculations]] |
+| Players below PS 300 get odds below the published baseline (the pivot is at P = 0.30); moving the pivot to 0 is an option | [[Dynamic Progression Luck]] |
+| The player's share of team damage grows from about 50% to about 66% by Starfall; cutting Strength growth to about 1.2 per level is the recommended fix (Q-211) | [[Player Strength]] |
+| Endgame roll throughput (about 300+ rolls per hour) outpaces 60 egg slots and the 100-animal working cap; a disposal action is needed (Q-305) | [[Progression Bottleneck Analysis]] |
+| Secret A5 ascension remains a very long chase without merging | [[Ascension Expected Value Analysis]] |
+| The 10% wild kill-credit rule cannot work for full-server world bosses, hence the boss credit rule above | [[Boss Design Overview]] |

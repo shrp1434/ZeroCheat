@@ -129,3 +129,418 @@ Every item here is **UNDECIDED**. Documents may describe options and give a reco
 
 ### Q-035
 **Does the defender's own equipped team join base defence** when the defender is present? ([[Base Defence Overview]]). *Blocks beta.*
+
+<!-- section-questions:start -->
+
+## Questions raised in section documents
+
+Each section was given its own ID range. Where two sections asked the same thing, the later question points to a **primary** question; answer the primary and the duplicates close with it. A *working proposal* is the assumption used for prototyping. It is **PROPOSED**, not a decision.
+
+### Duplicate clusters
+
+| Primary question | Also asked as |
+|---|---|
+| Q-201 | Q-507 |
+| Q-208 | Q-1008 |
+| Q-209 | Q-807, Q-901 |
+| Q-211 | Q-959 |
+| Q-301 | Q-501, Q-502, Q-804, Q-904 |
+| Q-302 | Q-1118 |
+| Q-303 | Q-106, Q-503, Q-801, Q-902, Q-958, Q-1006 |
+| Q-304 | Q-504, Q-805 |
+| Q-305 | Q-406, Q-509 |
+| Q-506 | Q-808 |
+| Q-508 | Q-1004 |
+| Q-510 | Q-101, Q-1002 |
+| Q-906 | Q-1009 |
+| Q-951 | Q-1007 |
+| Q-952 | Q-104, Q-806 |
+| Q-954 | Q-903, Q-1001 |
+| Q-957 | Q-105 |
+
+## Vision, core gameplay and world
+
+### Q-101
+May a player deliberately leave base with fewer than three animals equipped? Raised in [[Team Equipping and Base Lock Rule]]. **Duplicate of Q-510**.
+
+### Q-102
+How does a new player get their first animal (starter choice, free egg, or none)? Raised in [[New Player Onboarding]].
+
+### Q-103
+May the team contain two or more copies of the same species? Raised in [[Team Equipping and Base Lock Rule]].
+
+### Q-104
+Do Progression Score discovery points count wild defeats only, or hatched and owned animals too? Raised in [[Animal Index Feature Specification]]. **Duplicate of Q-952**.
+*Working proposal:* Wild defeats only (recommendation in the owning document).
+
+### Q-105
+What happens when a raider's animal storage is full at the moment of theft? Raised in [[Animal Theft Rules]]. **Duplicate of Q-957**.
+*Working proposal:* Require 3 free animal slots to start a raid.
+
+### Q-106
+Can variant instances be used as ascension duplicates, or be ascended? Raised in [[Ascension System]]. **Duplicate of Q-303**.
+
+### Q-107
+May a grouped player enter a region they have not unlocked? Raised in [[Region Unlock Progression]].
+
+## Combat, PvP and raiding
+
+### Q-201
+Can manual abilities be switched to auto-cast as an accessibility option? Raised in [[Abilities and Cooldowns]].
+
+### Q-202
+Do wild animals ever drop eggs directly? Raised in [[Combat Rewards]].
+*Working proposal:* No; eggs come only from rolls, merges, raids and (if approved) rewards.
+
+### Q-203
+What does winning PvP give? Raised in [[PvP System]].
+
+### Q-204
+How do knocked-out companions recover? Raised in [[Animal Combat Behaviour]].
+*Working proposal:* Back at 50% HP 30 s after the combat tag ends; field revive 3 s channel.
+
+### Q-205
+Does the raider choose which egg to steal, or is it random? Raised in [[Egg Theft Rules]].
+
+### Q-206
+Must a defender always keep a minimum number of owned animals (recommended: 3)? Raised in [[Animal Theft Rules]].
+
+### Q-207
+How does a player opt in to raiding (recommended: reciprocal toggle)? Q-011 covers PvP only. Raised in [[Base Raiding System]].
+
+### Q-208
+How many attackers can join one raid, and can several attackers raid one base at once? Raised in [[Base Raiding System]].
+*Working proposal:* One attacker per raid; one raid per defender at a time.
+
+### Q-209
+Can raids target online players on other servers? Raised in [[Base Raiding System]].
+*Working proposal:* Same server only.
+
+### Q-210
+Should defenders be compensated for stolen eggs and animals, and how? Raised in [[Raid Rewards and Defender Compensation]].
+
+### Q-211
+Should the player or the animals be the main damage source in late game? Raised in [[Player Strength]].
+*Working proposal:* Animals; cut Strength growth to about 1.2 per level so the player stays at 30–40% of team damage.
+
+### Q-212
+How hard should Mythical and Secret rare spawns be, and do they scale with group size? Raised in [[Wild Animal AI]].
+
+## Eggs, hatching and ascension
+
+### Q-301
+Where can egg rolls be made (hub shrine only, or the base too), and where does a rolled egg go by default? Raised in [[Egg Roll System]].
+*Working proposal:* Backpack first, then base storage.
+
+### Q-302
+Are hatch odds fixed at roll time or at hatch time? Raised in [[Hatch System]].
+*Working proposal:* Hatch time, disclosed at the hatch (D-017).
+
+### Q-303
+Do variant copies count as ascension duplicates, and can a variant be the animal that is kept? Raised in [[Ascension System]].
+*Working proposal:* Variant does not matter for duplicates; consuming a variant needs explicit confirmation.
+
+### Q-304
+Where can ascension be done: own base only, or anywhere outside combat? Raised in [[Ascension System]].
+
+### Q-305
+How are surplus animals disposed of (release or sell) once ascension is done or capacity is full? Raised in [[Long-Term Goals and Endgame]].
+
+## Bases, economy and monetisation
+
+### Q-401
+Are base upgrades instant or timed construction? Raised in [[Base Upgrade System]].
+*Working proposal:* Instant with an upgrade animation.
+
+### Q-402
+Do Training Grounds bonuses apply to base guards? Raised in [[Module - Training Grounds]].
+
+### Q-403
+Can raids temporarily disable modules? Raised in [[Base Defence Overview]].
+
+### Q-404
+How are base plots placed in the shared world? Raised in [[Base Layout and Plot Expansion]].
+*Working proposal:* Homestead Isles: 16 plot pads beside the hub, one per player in the server.
+
+### Q-405
+Is it acceptable that full merging is several times cheaper than direct rolling for Secret eggs? Raised in [[Egg Merging Station]].
+
+### Q-406
+Is there an animal release action, and does it return anything? Raised in [[Module - Animal Pens]]. **Duplicate of Q-305**.
+
+### Q-407
+Is the Trophy Hall bonus counted per trophy displayed or per trophy earned? Raised in [[Module - Trophy Hall]].
+
+### Q-408
+Can modules be demolished or refunded? Raised in [[Base Upgrade System]].
+
+### Q-409
+Is base storage available before the Egg Vault is built (the free L0 Egg Crate)? Raised in [[Module - Egg Vault]].
+*Working proposal:* Yes: a free L0 Egg Crate holds the confirmed 50 starting slots.
+
+### Q-410
+May XP boosts be sold for Robux, given that they indirectly raise the Progression Score and therefore odds? Raised in [[Monetisation Product Concepts]].
+
+### Q-411
+What is the AFK farming policy? Raised in [[Inflation and Farming Exploit Risks]].
+
+### Q-412
+Are there daily or login rewards? Raised in [[Economy Overview]].
+
+### Q-413
+Are private servers offered? Raised in [[Monetisation Product Concepts]].
+
+### Q-414
+Do Roblox Premium members get perks? Raised in [[Monetisation Product Concepts]].
+
+### Q-415
+How should shared kill credit scale with group size? Raised in [[Inflation and Farming Exploit Risks]].
+
+## UI and UX
+
+### Q-501
+Where does a newly rolled egg go when the backpack is full? Raised in [[UI - Egg Rolling]]. **Duplicate of Q-301**.
+
+### Q-502
+Can egg rolls be bought away from the hub egg shrine? Raised in [[UI - Egg Rolling]]. **Duplicate of Q-301**.
+
+### Q-503
+Does a variant count as a duplicate of its base species? Raised in [[UI - Ascension]]. **Duplicate of Q-303**.
+
+### Q-504
+Where can ascension be done? Raised in [[UI - Ascension]]. **Duplicate of Q-304**.
+
+### Q-505
+Is the Progression Score number (0–1000) shown to players? Raised in [[UI - Progression Interface]].
+
+### Q-506
+Which base actions are locked while the player's own base is being raided? Raised in [[UI - Raid Interface]].
+*Working proposal:* Base-stored eggs cannot be moved, hatched or merged; defensive upgrades and ascension of defending animals are blocked.
+
+### Q-507
+Can players switch a manual ability to automatic casting? Raised in [[UI - Animal Team Display]]. **Duplicate of Q-201**.
+
+### Q-508
+What happens when a hatch would exceed the owned-animal limit? Raised in [[UI - Egg Hatching]].
+*Working proposal:* The hatch is refused and the egg is not consumed.
+
+### Q-509
+Can players release owned animals, and what do they get? Raised in [[UI - Animal Inventory]]. **Duplicate of Q-305**.
+
+### Q-510
+Can a player with fewer than three animals leave the base with a partial team? Raised in [[UI - Team Selection]].
+
+## Art direction and assets
+
+### Q-601
+Should player avatar type or scale be constrained (companion scale assumes a 5-stud avatar)? Raised in [[Animal Modelling Principles]].
+
+### Q-602
+Can players personalise their base (colours, themes, decorations)? Raised in [[Base Art Direction]].
+
+### Q-603
+Day/night cycle, or a fixed time of day per region? Raised in [[Lighting Direction]].
+*Working proposal:* Fixed per region.
+
+### Q-604
+Is it acceptable to shrink colossal species to the 9-stud companion cap? Raised in [[Animal Modelling Principles]].
+
+### Q-605
+May in-world signs contain text, or must they be icon-only for localisation? Raised in [[Environment Art Direction]].
+
+### Q-606
+Do regions have weather states? Raised in [[Environment Art Direction]].
+
+### Q-607
+Should the game offer its own reduced-effects setting (Bloom and particles)? Raised in [[UI - Settings]].
+
+### Q-608
+Can one animal carry more than one variant at once? Raised in [[Variant Visual Treatments]].
+
+## Technical architecture
+
+### Q-801
+Can variant animals be used as ascension duplicates, and must the variant match? Raised in [[Service - AscensionService]]. **Duplicate of Q-303**.
+
+### Q-802
+Can already-ascended duplicates be consumed, and is anything refunded? Raised in [[Service - AscensionService]].
+*Working proposal:* Only A0 duplicates are consumed unless the player explicitly confirms.
+
+### Q-803
+Can a player deliberately leave a team slot empty while owning three or more animals? Raised in [[Service - TeamService]].
+
+### Q-804
+Where do newly rolled eggs go when the backpack is full? Raised in [[Service - EggService]]. **Duplicate of Q-301**.
+
+### Q-805
+Can ascension be done away from the base? Raised in [[Service - AscensionService]]. **Duplicate of Q-304**.
+
+### Q-806
+Does hatching or stealing an animal count as discovering it? Raised in [[Service - IndexService]]. **Duplicate of Q-952**.
+
+### Q-807
+Will raids ever work across servers? Raised in [[Service - RaidService]]. **Duplicate of Q-209**.
+
+### Q-808
+Are the defender's base-stored eggs locked during a raid? Raised in [[Service - RaidService]]. **Duplicate of Q-506**.
+
+### Q-809
+AI movement technique: server-owned physics or server-moved anchored models? Raised in [[Service - AnimalAIService]].
+*Working proposal:* Prototype both in M05.
+
+### Q-810
+What precision should odds be displayed at (Secret is about 0.000885% at P = 0)? Raised in [[Service - LuckService]].
+*Working proposal:* At least two significant figures plus 'about 1 in N'; never shown as 0%.
+
+## Luau, multiplayer and security
+
+### Q-901
+Can raids target defenders on other servers? Raised in [[Implementation - Raid Session Controller]]. **Duplicate of Q-209**.
+
+### Q-902
+Do variant animals count as duplicates? Raised in [[Implementation - Ascension Transaction]]. **Duplicate of Q-303**.
+
+### Q-903
+Where does a merged egg go when base storage is full and the inputs came from the backpack? Raised in [[Implementation - Egg Merge Transaction]]. **Duplicate of Q-954**.
+
+### Q-904
+Where do rolled eggs go? Raised in [[Implementation - Egg Roll and Hatch Flow]]. **Duplicate of Q-301**.
+
+### Q-905
+Automated anti-cheat policy at launch: log only, or kicks? Raised in [[Exploit Prevention]].
+*Working proposal:* Log and kick at a high violation score; never an automated ban.
+
+### Q-906
+If a defender disconnects, do animals already held still transfer? Raised in [[Implementation - Raid Session Controller]].
+*Working proposal:* Yes if the vault was already breached (Raid Disconnection Handling).
+
+### Q-907
+Cooldown on the same attacker raiding the same defender, and how long? Raised in [[Raid Anti-Exploit Validation]].
+*Working proposal:* 24 h pair cooldown.
+
+## Data and balancing
+
+### Q-951
+Where do stolen eggs land in the raider's storage, and what happens when it is full? Raised in [[Egg Theft Rules]].
+*Working proposal:* Attacker's base storage; theft refused when full.
+
+### Q-952
+Does obtaining a species by hatch, theft or event without defeating it count as discovered for the index and the Progression Score? Raised in [[Animal Index Feature Specification]].
+
+### Q-953
+Do percentage bonuses from different sources add or multiply? Raised in [[Damage, Defence and Health Model]].
+*Working proposal:* Multiply across sources (ascension × Training Grounds × temporary buffs); add within one source.
+
+### Q-954
+Where does a merge's output go when base storage is full and all three inputs came from the backpack? Raised in [[Egg Merging]].
+*Working proposal:* Into a freed backpack slot; merge inputs are taken from base storage first.
+
+### Q-955
+How long are audit, ledger and quarantine records kept, and how are they handled under a data-erasure request? Raised in [[Save, Load and Recovery]].
+
+### Q-956
+Keep our own daily profile snapshot store as well as DataStore version history? Raised in [[Save, Load and Recovery]].
+
+### Q-957
+What happens when a raider already at the owned-animal cap steals an animal? Raised in [[Animal Theft Rules]].
+
+### Q-958
+Must ascension duplicates have the same variant as the animal being ascended? Raised in [[Ascension System]]. **Duplicate of Q-303**.
+
+### Q-959
+Target split of team damage between the player and their animals? Raised in [[Player Strength]]. **Duplicate of Q-211**.
+
+## QA and testing
+
+### Q-1001
+Merge output when base storage is full and inputs came from the backpack. Raised in [[Test Cases - Egg Merging]]. **Duplicate of Q-954**.
+
+### Q-1002
+How does the exactly-three team rule apply to a player owning fewer than three animals? Raised in [[Test Cases - Combat]]. **Duplicate of Q-510**.
+
+### Q-1003
+Is a bulk roll with fewer than 5 free slots refused or partially fulfilled? Raised in [[Test Cases - Egg Rolls and Hatching]].
+*Working proposal:* Refused (all or nothing); the UI offers 'Roll ×N'.
+
+### Q-1004
+Hatching with owned-animal storage full, including a multi-hatch that exceeds the space. Raised in [[Test Cases - Egg Rolls and Hatching]]. **Duplicate of Q-508**.
+
+### Q-1005
+Can an equipped animal be ascended away from base, and can an equipped copy be consumed? Raised in [[Test Cases - Ascension]].
+*Working proposal:* Equipped, guarding and favourite animals can never be consumed.
+
+### Q-1006
+Do variant copies count as ascension duplicates or targets? Raised in [[Test Cases - Ascension]]. **Duplicate of Q-303**.
+
+### Q-1007
+Where do stolen eggs and animals go when the attacker has no free capacity? Raised in [[Test Cases - Raiding]]. **Duplicate of Q-951**.
+
+### Q-1008
+Can more than one attacker raid the same base at once? Raised in [[Test Cases - Raiding]]. **Duplicate of Q-208**.
+
+### Q-1009
+Does a defender's disconnect end the raid immediately or after a grace window? Raised in [[Test Cases - Raiding]]. **Duplicate of Q-906**.
+
+### Q-1010
+Which physical devices define the low, mid and high mobile reference tiers? Raised in [[Test Cases - Mobile Performance]].
+
+## Roadmap and live operations
+
+### Q-1101
+Studio staffing and discipline ownership (needed to turn sizes into dates). Raised in [[Development Roadmap]].
+
+### Q-1102
+Beta format: closed or open, cohort size, and whether progress is wiped at launch. Raised in [[M21 - Beta Testing]].
+
+### Q-1103
+Launch scope cut line. Raised in [[M22 - Launch]].
+
+### Q-1104
+Live update cadence. Raised in [[Live Operations Framework]].
+
+### Q-1105
+Can limited-time content become permanently unobtainable? Raised in [[Seasonal and Limited-Time Events]].
+
+### Q-1106
+How do post-launch animals enter pools, and can animals be retired from a pool? Raised in [[Content Expansion Guidelines]].
+
+### Q-1107
+Compensation after nerfs. Raised in [[Balance Update Process]].
+
+### Q-1108
+Analytics stack: Roblox built-in only, or external telemetry (needs a privacy review)? Raised in [[Live Operations Framework]].
+
+### Q-1109
+Staging environment structure and isolation of production data stores. Raised in [[Content Update Pipeline]].
+
+### Q-1110
+Primary platform priority (mobile, PC, console). Raised in [[Development Roadmap]].
+
+### Q-1111
+Localisation languages at launch. Raised in [[Live Operations Framework]].
+
+### Q-1112
+Seasonal progression track, and whether any paid tier is allowed. Raised in [[Seasonal and Limited-Time Events]].
+
+### Q-1113
+Event currency: none, converts to Cash, or expires? Raised in [[Seasonal and Limited-Time Events]].
+
+### Q-1114
+Do event eggs exist, and what are their merge, theft and storage rules? Raised in [[Seasonal and Limited-Time Events]].
+
+### Q-1115
+How are live servers moved to a new version? Raised in [[Content Update Pipeline]].
+
+### Q-1116
+Content rating questionnaire answers. Raised in [[M22 - Launch]].
+
+### Q-1117
+Who signs off odds tables before release? Raised in [[Content Expansion Guidelines]].
+
+### Q-1118
+Do unhatched eggs hatch under the pool current at hatch time or the pool in force when they were rolled? Raised in [[Content Expansion Guidelines]]. **Duplicate of Q-302**.
+
+### Q-1119
+Is there an exploit-reporting or bug-report reward programme? Raised in [[Live Operations Framework]].
+
+<!-- section-questions:end -->

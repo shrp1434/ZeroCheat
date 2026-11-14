@@ -70,7 +70,7 @@ sequenceDiagram
 | Locked player walks into the gate | Soft barrier (a shimmering Waystone veil, ENV-170 range) pushes them back gently; no damage |
 | Unlocked player walks through | Veil parts for them only (client-side visual; server allows passage) |
 | Locked player is knocked or pushed through (physics, PvP) | Server detects presence in a locked region volume and returns them to the gate's safe side within 1 s |
-| Locked player teleported by a raid | Raids target bases, which are on the Homestead Terraces, so no region access is granted |
+| Locked player teleported by a raid | Raids target bases, which are on the Homestead Isles, so no region access is granted |
 | Group with mixed unlocks | Unlocked members pass; locked members cannot follow |
 
 > [!warning] UNDECIDED (Q-107)

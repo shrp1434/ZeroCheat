@@ -69,7 +69,7 @@ flowchart TD
     PLAZA --> TRAIN["Training Yard (tutorial)"]
     PLAZA --> WAY["Waystone Ring (8 region portals)"]
     WAY --> SOUTH["South Gate to Whisperwood (always open)"]
-    PORT --> TERR["Homestead Terraces (player base plots)"]
+    PORT --> TERR["Homestead Isles (player base plots)"]
 ```
 
 | Area | Function | Notes |
@@ -78,7 +78,7 @@ flowchart TD
 | **Elder Egg Plaza** (ENV-002) | Central landmark and meeting space | Emotes and hatch celebrations visible to everyone |
 | **Egg Shrine** (ENV-003) | Egg rolls (200 Cash each, ×5 for 1,000; **PROPOSED**, [[Egg Pricing]]) with the odds panel | Seven rarity niches light up during roll presentations ([[UI - Egg Rolling]]) |
 | **Base Portal Arcade** (ENV-004) | One personal portal that always leads to the player's own base | Shows shield status and active-raid warnings ([[Shield Mechanics]]) |
-| **Homestead Terraces** (ENV-005) | Ring of base plots around the plateau's outer edge | Plot geometry and capacity are owned by [[Base Layout and Plot Expansion]]; this is a **PROPOSED** location only |
+| **Homestead Isles** (ENV-005) | Ring of 16 floating plot islands around the plateau, linked to the hub by bridges and one portal arch per plot | Plot geometry and capacity are owned by [[Base Layout and Plot Expansion]]; this is a **PROPOSED** location only |
 | **World Boss Board** (ENV-006) | Countdown timers and "announced" banners for the four world bosses | Mirrors [[UI - Notifications]] |
 | **Index Pedestal** (ENV-007) | Opens the [[UI - Animal Index Screen]]; shows server-wide first-discovery feed (**PROPOSED**) | |
 | **Training Yard** (ENV-008) | Combo and dodge drills used by [[New Player Onboarding]] | Training stumps and swinging logs; no rewards |
@@ -111,7 +111,7 @@ flowchart TD
 | Dynamic lights | ≤ 8 (Elder Egg, Shrine, Waystones share) |
 | Companions visible | Up to 48 (16 players × 3); simplified idle animation beyond 80 studs |
 
-Base plots on the Homestead Terraces are streamed separately and budgeted in [[Base Layout and Plot Expansion]] and [[Animal Scalability and Performance Budgets]].
+Base plots on the Homestead Isles are streamed separately and budgeted in [[Base Layout and Plot Expansion]] and [[Animal Scalability and Performance Budgets]].
 
 ## 7. Asset list
 
@@ -121,7 +121,7 @@ Base plots on the Homestead Terraces are streamed separately and budgeted in [[B
 | ENV-002 | Elder Egg landmark and plaza |
 | ENV-003 | Egg Shrine with seven rarity niches |
 | ENV-004 | Base Portal Arcade |
-| ENV-005 | Homestead Terrace edge and plot border kit |
+| ENV-005 | Homestead Isles bridge, island edge and plot border kit |
 | ENV-006 | World Boss Board |
 | ENV-007 | Index Pedestal |
 | ENV-008 | Training Yard props |

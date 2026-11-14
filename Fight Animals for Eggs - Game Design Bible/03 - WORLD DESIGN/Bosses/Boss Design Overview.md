@@ -120,6 +120,7 @@ Player Strength 26; three-hit combo averages Strength × 1.0 per 0.45 s ≈ 58 r
 | Rule | Mini-boss | World boss |
 |---|---|---|
 | Credit threshold | ≥ 5% of current scaled max HP contributed | ≥ 2.5% |
+| Time alternative (for Supports and Controllers) | In the arena and in combat for ≥ 50% of the fight | In the arena and in combat for ≥ 60 s |
 | Healing and shielding by the player's animals | Counts 1:1 towards the threshold | Same |
 | Knocked out during the fight | Contribution kept if the boss falls before it resets | Same |
 | Gate and PS credit | Recorded permanently on first credited defeat | Same |

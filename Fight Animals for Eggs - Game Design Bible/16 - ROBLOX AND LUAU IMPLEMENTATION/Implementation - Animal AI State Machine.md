@@ -27,12 +27,12 @@ One server-side state machine drives every non-player combatant: wild animals, c
 | `Idle` | Wild, Guard | Stand at spawn or post | Hostile within aggro radius → `Alert`; timer → `Wander` (wild) |
 | `Wander` | Wild | Short random walk within 15 studs of spawn | Hostile in aggro radius → `Alert`; arrived → `Idle` |
 | `Alert` | Wild, Guard | 0.4 s wind-up (readability: head turn, sound) | Timer → `Chase`; target lost → `Idle` |
-| `Follow` | Companion | Stay 6–10 studs behind owner | Owner in combat or target command → `Chase`; owner > 80 studs away → `Regroup` |
+| `Follow` | Companion | Stay 6–10 studs behind owner | Owner in combat or target command → `Chase`; owner > 90 studs away or stuck 4 s → `Regroup` |
 | `Chase` | All | Move toward target | In range → `Attack`; leash exceeded → `Return`; target lost 3 s → previous rest state |
 | `Attack` | All | Basic attacks at attack speed | Out of range → `Chase`; ability ready → `Ability`; target dead → reselect |
 | `Ability` | All | Automatic ability (manual abilities are queued by the owner, D-008) | Cast complete → `Attack` |
 | `Return` | Wild, Guard | Walk back to spawn or post, invulnerable, then full HP reset | Arrived → `Idle` |
-| `Regroup` | Companion | Teleport to owner if path fails or distance > 80 studs | Done → `Follow` |
+| `Regroup` | Companion | Teleport to owner if the path fails, it is stuck for 4 s, or the distance exceeds 90 studs | Done → `Follow` |
 | `Stunned` | All | Controlled by an effect | Timer → previous state |
 | `KnockedOut` | All | HP = 0. Wild: despawn after death animation. Companion: out for the fight. Guard: becomes stealable in a raid | Wild → `Respawning`; Companion → revive rules ([[Player Defeat and Penalties]]); Guard → raid end |
 | `Respawning` | Wild | Waiting for the rarity respawn timer ([[Wild Animal Spawning and Respawn]]) | Timer → `Idle` at spawn |
@@ -72,7 +72,7 @@ Companions replace `Idle/Wander/Alert/Return` with `Follow/Regroup`; they never 
 | Leash | 60 studs from spawn | Canonical §4 |
 | Companion auto-target acquisition | 30 studs from owner | D-009 auto-target |
 | Companion follow distance | 6–10 studs | |
-| Companion regroup distance | 80 studs | Teleport to owner |
+| Companion regroup distance | 90 studs (or 4 s stuck) | Teleport to owner; owned by [[Animal Combat Behaviour]] |
 | Target lost timeout | 3 s without sight or in leash | |
 | Attack cadence | `1 / AttackSpeed` seconds | Role AS from canonical §3 |
 | Basic attack range | Role range (5 / 28 / 18 / 12) + target radius | Canonical §3 |
