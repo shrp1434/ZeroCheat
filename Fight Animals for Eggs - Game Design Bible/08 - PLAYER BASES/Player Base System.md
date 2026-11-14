@@ -103,13 +103,13 @@ Lifecycle and timing of the raid belong to [[Raid Lifecycle and States]]; durati
 ```mermaid
 stateDiagram-v2
     [*] --> Unassigned
-    Unassigned --> Building: "Player joins, pad assigned"
-    Building --> Active: "Profile loaded, modules spawned"
-    Active --> Raided: "Eligible raid starts"
-    Raided --> Active: "Raid resolves"
-    Active --> Saving: "Owner leaves server"
-    Raided --> Saving: "Owner leaves (see Raid Disconnection Handling)"
-    Saving --> Unassigned: "Profile saved, plot cleared"
+    Unassigned --> Building: Player joins, pad assigned
+    Building --> Active: Profile loaded, modules spawned
+    Active --> Raided: Eligible raid starts
+    Raided --> Active: Raid resolves
+    Active --> Saving: Owner leaves server
+    Raided --> Saving: Owner leaves (see Raid Disconnection Handling)
+    Saving --> Unassigned: Profile saved, plot cleared
 ```
 
 | Step | Server work | Notes |

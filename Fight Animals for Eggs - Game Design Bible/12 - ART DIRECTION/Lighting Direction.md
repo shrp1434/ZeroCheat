@@ -45,10 +45,10 @@ Lighting is changed **on the client only** when the local player enters a region
 
 ```mermaid
 sequenceDiagram
-    participant P as "Player character"
-    participant Z as "Region zone check (client)"
-    participant L as "LightingController (client)"
-    participant S as "Lighting and effects"
+    participant P as Player character
+    participant Z as Region zone check (client)
+    participant L as LightingController (client)
+    participant S as Lighting and effects
     P->>Z: Crosses region boundary
     Z->>L: RegionChanged(newRegionId)
     L->>L: Look up preset table

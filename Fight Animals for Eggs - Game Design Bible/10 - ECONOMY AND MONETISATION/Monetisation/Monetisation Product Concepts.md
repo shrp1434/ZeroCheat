@@ -90,6 +90,7 @@ Status column: **Allowed** = passes all principles; **Review** = needs an owner 
 | Extra hatch slots (more than 5 at once) | **Rejected** | The 5-egg limit is **CONFIRMED** (D-016) |
 | Skip hatch animation | **Free** after first viewing (canonical §7) | — |
 | Private servers | **Review** (Q-413) | If offered, PROPOSED 100 Robux per month; same rules and rewards as public servers |
+| Roblox Premium member perks | **Review** (Q-414) | Recommendation: cosmetic only (e.g. a Premium name-plate colour); never Cash, XP, storage or power |
 
 ## 2. Implementation notes
 
