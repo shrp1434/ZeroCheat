@@ -186,6 +186,7 @@ flowchart BT
     PROG["L2 ProgressionService"] --> DATA
     IDX["L2 IndexService"] --> DATA
     BASE["L3 BaseService"] --> ECO
+    BASE --> PROG
     PVP["L3 PvPService"] --> DATA
     LUCK["L4 LuckService"] --> PROG
     LUCK --> IDX

@@ -36,7 +36,9 @@ One system for every message the game sends the player: quick toasts, server-wid
 
 Critical banner > server announcement > error toast > warning toast > success / info toast > log-only.
 
-## Elements — notification catalogue
+## Elements
+
+The notification catalogue: every event, its surface and priority.
 
 | Event | Surface | Priority | Copy example | Action |
 |---|---|---|---|---|
