@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="1200" height="360" role="img" aria-label="Fight Animals for Eggs title treatment concept">
+  <title>Fight Animals for Eggs — title treatment concept (placeholder, not final logo)</title>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3D8BFF"/>
+      <stop offset="1" stop-color="#A55BFF"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFE27A"/>
+      <stop offset="1" stop-color="#FFB020"/>
+    </linearGradient>
+    <linearGradient id="egg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.55" stop-color="#FFE9B8"/>
+      <stop offset="1" stop-color="#FFB020"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="360" rx="36" fill="url(#sky)"/>
+  <!-- low-poly hills -->
+  <polygon points="0,300 160,230 330,285 520,215 700,280 880,220 1060,270 1200,235 1200,360 0,360" fill="#4CC26A"/>
+  <polygon points="0,330 220,280 420,320 640,270 860,322 1080,288 1200,310 1200,360 0,360" fill="#2E9A4E"/>
+  <!-- egg emblem -->
+  <g transform="translate(600 150)">
+    <ellipse cx="0" cy="10" rx="92" ry="118" fill="#1B1B2F" opacity="0.25"/>
+    <path d="M0,-118 C62,-118 92,-20 92,30 C92,88 50,122 0,122 C-50,122 -92,88 -92,30 C-92,-20 -62,-118 0,-118 Z" fill="url(#egg)" stroke="#1B1B2F" stroke-width="8"/>
+    <polyline points="-78,10 -48,-12 -20,12 8,-14 36,10 64,-12 84,6" fill="none" stroke="#1B1B2F" stroke-width="7" stroke-linejoin="round"/>
+    <!-- paw print -->
+    <g fill="#FF4D8D">
+      <ellipse cx="0" cy="62" rx="26" ry="20"/>
+      <circle cx="-30" cy="30" r="10"/>
+      <circle cx="-10" cy="20" r="10"/>
+      <circle cx="12" cy="20" r="10"/>
+      <circle cx="32" cy="30" r="10"/>
+    </g>
+  </g>
+  <!-- title text -->
+  <g font-family="Arial Black, Arial, Helvetica, sans-serif" font-weight="900" text-anchor="middle">
+    <text x="300" y="150" font-size="86" fill="#1B1B2F" transform="translate(5 6)">FIGHT</text>
+    <text x="300" y="150" font-size="86" fill="url(#gold)" stroke="#1B1B2F" stroke-width="4">FIGHT</text>
+    <text x="300" y="235" font-size="70" fill="#1B1B2F" transform="translate(5 6)">ANIMALS</text>
+    <text x="300" y="235" font-size="70" fill="#FFFFFF" stroke="#1B1B2F" stroke-width="4">ANIMALS</text>
+    <text x="905" y="150" font-size="56" fill="#1B1B2F" transform="translate(4 5)">FOR</text>
+    <text x="905" y="150" font-size="56" fill="#FFFFFF" stroke="#1B1B2F" stroke-width="4">FOR</text>
+    <text x="905" y="240" font-size="96" fill="#1B1B2F" transform="translate(5 6)">EGGS</text>
+    <text x="905" y="240" font-size="96" fill="url(#gold)" stroke="#1B1B2F" stroke-width="4">EGGS</text>
+  </g>
+  <!-- rarity pips -->
+  <g transform="translate(408 330)">
+    <circle cx="0" cy="0" r="11" fill="#9AA5B1" stroke="#1B1B2F" stroke-width="3"/>
+    <circle cx="64" cy="0" r="11" fill="#4CC26A" stroke="#1B1B2F" stroke-width="3"/>
+    <circle cx="128" cy="0" r="11" fill="#3D8BFF" stroke="#1B1B2F" stroke-width="3"/>
+    <circle cx="192" cy="0" r="11" fill="#A55BFF" stroke="#1B1B2F" stroke-width="3"/>
+    <circle cx="256" cy="0" r="11" fill="#FFB020" stroke="#1B1B2F" stroke-width="3"/>
+    <circle cx="320" cy="0" r="11" fill="#FF4D8D" stroke="#1B1B2F" stroke-width="3"/>
+    <circle cx="384" cy="0" r="11" fill="#1B1B2F" stroke="#FFFFFF" stroke-width="3"/>
+  </g>
+</svg>

@@ -1,0 +1,8 @@
+{
+  "items": [
+    {"type": "file", "path": "00 - HOME AND NAVIGATION/Home.md", "title": "Home"},
+    {"type": "file", "path": "00 - HOME AND NAVIGATION/Vault Map.md", "title": "Vault Map"},
+    {"type": "file", "path": "18 - DATA AND BALANCING/Canonical Proposed Values.md", "title": "Canonical Proposed Values"},
+    {"type": "file", "path": "23 - DECISIONS AND CHANGELOG/Open Questions.md", "title": "Open Questions"}
+  ]
+}
