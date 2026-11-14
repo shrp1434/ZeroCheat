@@ -69,8 +69,8 @@ IDs ANI-536 to ANI-549 are reserved.
 
 | Channel | Working value | Owner of the real value |
 |---|---|---|
-| Steal one egg | 3.0 s | [[Egg Theft Rules]] |
-| Capture one knocked-out animal | 5.0 s | [[Animal Theft Rules]] |
+| Steal one egg (vault pickup hold) | 1.5 s | [[Egg Theft Rules]] |
+| Capture one knocked-out animal | 3.0 s (`AnimalCaptureChannelSeconds`) | [[Animal Theft Rules]] |
 
 Loops are authored so any channel length from 1.5 s to 10 s looks correct.
 

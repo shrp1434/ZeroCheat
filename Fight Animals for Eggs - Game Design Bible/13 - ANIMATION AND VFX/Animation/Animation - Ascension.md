@@ -144,7 +144,7 @@ flowchart LR
     D --> E["Transform: new visual tier"]
     E --> F["Present with stat gains"]
     F --> G["Viewport closes, world model updated"]
-    B -. "Skip after first viewing" .-> F
+    B -.->|"Skip after first viewing"| F
 ```
 
 ## 7. Mobile performance considerations

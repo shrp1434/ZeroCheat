@@ -416,6 +416,17 @@ These values were introduced by individual sections and then reconciled so every
 | Base area | "Homestead Isles": a ring of 16 plot islands around the hub | [[Base Layout and Plot Expansion]] |
 | Rarity colour note | Secret `#1B1B2F` is nearly invisible on dark panels; always pair it with the prismatic stroke | [[Rarity Visual Language]] |
 
+### Presentation timings
+
+| Value | Proposal | Owner |
+|---|---|---|
+| Egg roll reveal | Common 1.6 s, Uncommon 2.2, Rare 2.8, Epic 3.6, Legendary 4.6, Mythical 5.8, Secret 7.0 s; shorter after first viewing | [[Animation - Egg Roll]] |
+| Hatch | 3.5 s single; 5.0 s for 2–5 eggs | [[Animation - Egg Hatch]] |
+| Merge | 2.5 / 3.0 / 3.5 / 4.25 / 5.0 / 6.0 s by tier (Common→Uncommon … Mythical→Secret) | [[Animation - Egg Merge]] |
+| Ascension ceremony | A1 3.0 s, A2 3.5, A3 4.0, A4 4.8, A5 6.5 s | [[Animation - Ascension]] |
+| Raid steal channels | Egg pickup hold 1.5 s; animal capture 3.0 s | [[Egg Theft Rules]] · [[Animal Theft Rules]] |
+| Reveal honesty | A reveal never shows a colour, sound or effect of a higher rarity than the server's result | [[Animation Bible]] |
+
 ### Known balance findings (from the Python models of these formulas, not from the game)
 
 | Finding | Where analysed |

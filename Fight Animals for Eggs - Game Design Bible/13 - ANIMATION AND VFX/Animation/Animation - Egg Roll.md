@@ -40,7 +40,7 @@ Every reveal has the same four phases. Rarity changes the **length and intensity
 | C | Reveal | Shell cracks; the true rarity colour bursts out | Effect size |
 | D | Present | Egg shown in its rarity model with label; flies to storage | Length and flourish |
 
-**Why neutral pulses and not a colour ladder.** A ladder (grey → green → blue …) that stops at the true tier is honest under the Bible rule, but playtests of similar presentations tend to read the colours that *did not* appear as a near miss. Neutral white pulses make the build exciting without ever displaying a higher tier's colour. The colour appears once, at the true tier. The ladder is a rejected alternative, kept here for the record.
+**Why neutral pulses and not a colour ladder.** A ladder (grey → green → blue …) that stops at the true tier is honest under the Bible rule, but the team's concern (a design judgement to validate in our own playtests, not measured data) is that players may read the colours that *did not* appear as a near miss. Neutral white pulses make the build exciting without ever displaying a higher tier's colour. The colour appears once, at the true tier. The ladder is a rejected alternative, kept here for the record.
 
 Only the Secret build darkens the scene into the night-sky key (`#1B1B2F`). Because no other tier ever shows it, the darkness is a true signal rather than a fake-out.
 
@@ -120,7 +120,7 @@ The egg itself is a prop rig (`HumanoidRootPart`, `ShellTop`, `ShellBottom`, `Gl
 | Frames | Phase | Action |
 |---|---|---|
 | f0–17 | A | Intro |
-| f18–35 | B | Pulses at f20 and f30 (SFX-323 rising a whole tone each pulse); wobbles grow from ±6° to ±10° |
+| f18–35 | B | Pulses at f20 and f30 (SFX-323 stepping up one note of the neutral pentatonic set per pulse; discrete notes, never a sweep); wobbles grow from ±6° to ±10° |
 | f36 | C | Crack |
 | f38 | C | Leaf-green colour, Uncommon model; VFX-112 green ring and four leaf-shaped sparks |
 | f39–55 | D | Bounce, label, MUS-32 stinger |

@@ -357,6 +357,27 @@ Should the game offer its own reduced-effects setting (Bloom and particles)? Rai
 ### Q-608
 Can one animal carry more than one variant at once? Raised in [[Variant Visual Treatments]].
 
+## Animation, VFX and sound
+
+### Q-701
+Can a knocked-out raid defender recover during a raid, and after how long? Raised in [[Animation - Animal Defeat and Victory]].
+
+### Q-702
+Are R15 avatars enforced, and are players' own avatar animation packs kept for locomotion? Raised in [[Animal Rig Standards]].
+
+### Q-703
+Do other players see a player's roll and hatch reveals, and are Mythical and Secret results announced server-wide? Raised in [[Animation - Egg Roll]].
+
+### Q-704
+Must captured eggs and animals be carried out of the base before they count, or do they transfer when the capture completes? Raised in [[Animation - Raid Interactions]].
+*Working proposal:* Eggs count when secured at the extraction point; animals transfer when a successful raid resolves (Raid Disconnection Handling).
+
+### Q-705
+How is music sourced: original commission, licensed library, or Roblox-available audio? Raised in [[Music Direction]].
+
+### Q-706
+Is there any voice-over or announcer at launch? The documents assume none. Raised in [[Sound Bible]].
+
 ## Technical architecture
 
 ### Q-801

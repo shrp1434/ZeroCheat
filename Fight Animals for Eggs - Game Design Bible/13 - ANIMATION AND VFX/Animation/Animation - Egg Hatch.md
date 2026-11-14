@@ -167,7 +167,7 @@ flowchart LR
     F --> G["Hold with badges"]
     G --> H["Fly to collection"]
     H --> I["Camera blend out, HUD restored"]
-    D -. "Skip (after first viewing)" .-> G
+    D -.->|"Skip (after first viewing)"| G
 ```
 
 After the sequence the player regains control. If the player is at their base, the summary offers "Go to team selection" ([[UI - Team Selection]]); away from the base it does not, because the team is locked outside the base (D-010).

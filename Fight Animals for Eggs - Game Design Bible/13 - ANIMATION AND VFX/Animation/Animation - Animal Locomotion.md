@@ -398,21 +398,21 @@ f0 both feet contact, tail touches ground; f1–3 crouch absorb; f4–6 extensio
 ```mermaid
 stateDiagram-v2
     [*] --> Idle
-    Idle --> CombatIdle: "Target within 20 studs"
-    CombatIdle --> Idle: "Combat tag ends"
-    Idle --> Walk: "speed above 0.5"
-    Walk --> Run: "speed above 10"
-    Run --> Walk: "speed below 6"
-    Walk --> Idle: "speed below 0.5"
-    Run --> Jump: "Step over 2 studs"
+    Idle --> CombatIdle: Target within 20 studs
+    CombatIdle --> Idle: Combat tag ends
+    Idle --> Walk: speed above 0.5
+    Walk --> Run: speed above 10
+    Run --> Walk: speed below 6
+    Walk --> Idle: speed below 0.5
+    Run --> Jump: Step over 2 studs
     Jump --> Fall
     Fall --> Land
     Land --> Run
-    Walk --> TakeOff: "Flyer and speed above 6"
+    Walk --> TakeOff: Flyer and speed above 6
     TakeOff --> Flap
     Flap --> Glide
     Glide --> Flap
-    Flap --> Landing: "Stopped for 2 s"
+    Flap --> Landing: Stopped for 2 s
     Landing --> Idle
 ```
 

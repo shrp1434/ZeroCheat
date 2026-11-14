@@ -61,7 +61,7 @@ Details of the tutorial steps are in [[New Player Onboarding]]. Pacing targets:
 | 2–4 | Choose a starter animal (**PROPOSED**, see onboarding) and enter [[Region - Whisperwood Forest]] | 1 |
 | 4–12 | Defeat around 20 Commons, discover 3–5 species, earn the first 200 Cash | 2–3 |
 | 12–15 | First egg roll at the Egg Shrine, odds panel explained, first hatch | 3 |
-| 15–20 | Visit own base, equip a team of 2–3, see the lock happen on leaving | 3–4 |
+| 15–20 | Visit own base, equip a team (three animals; whether a new player with fewer than three may leave with a partial team is **UNDECIDED**, Q-510), see the lock happen on leaving | 3–4 |
 | 20–35 | Free play: more discoveries, second and third rolls, first module purchase (Animal Pens 1,000 Cash) | 4–5 |
 | 35–45 | First look at [[Mini-Boss - Bramblehorn]] (recommended level 8–10; the gate needs level 8) | 5 |
 

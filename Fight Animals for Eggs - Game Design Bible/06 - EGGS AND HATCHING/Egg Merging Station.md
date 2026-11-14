@@ -30,7 +30,7 @@ The Egg Merging Station is the base structure where players perform [[Egg Mergin
 |---:|---|---:|---|---|---|---|
 | 1 | Twig Nest Press | 2,500 | — | Common → Uncommon; Uncommon → Rare | 100; 300 | 2.5 s; 3.0 s |
 | 2 | Stonebound Hatchery Forge | 15,000 | Region 2 unlocked | Rare → Epic | 900 | 3.5 s |
-| 3 | Crystal Incubator | 60,000 | Region 4 unlocked | Epic → Legendary | 2,700 | 4.5 s |
+| 3 | Crystal Incubator | 60,000 | Region 4 unlocked | Epic → Legendary | 2,700 | 4.25 s |
 | 4 | Aurora Crucible | 250,000 | Region 6 unlocked + 1 world boss defeated | Legendary → Mythical | 8,000 | 5.0 s |
 | 5 | Celestial Convergence Altar | 1,000,000 | Region 8 unlocked | Mythical → Secret | 25,000 | 6.0 s |
 

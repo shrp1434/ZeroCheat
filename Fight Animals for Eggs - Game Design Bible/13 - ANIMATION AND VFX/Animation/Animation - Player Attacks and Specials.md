@@ -74,17 +74,17 @@ IDs ANI-235 to ANI-259 are reserved (raid carry clips live in [[Animation - Raid
 ```mermaid
 stateDiagram-v2
     [*] --> Stance
-    Stance --> Hit1: "Attack input"
-    Hit1 --> Hit2: "Input buffered, chain at f27"
-    Hit2 --> Hit3: "Input buffered, chain at f27"
-    Hit3 --> Hit1: "Input buffered, chain at f27"
-    Hit1 --> EndTail: "No input by f27"
-    Hit2 --> EndTail: "No input by f27"
-    Hit3 --> EndTail: "No input by f27"
+    Stance --> Hit1: Attack input
+    Hit1 --> Hit2: Input buffered, chain at f27
+    Hit2 --> Hit3: Input buffered, chain at f27
+    Hit3 --> Hit1: Input buffered, chain at f27
+    Hit1 --> EndTail: No input by f27
+    Hit2 --> EndTail: No input by f27
+    Hit3 --> EndTail: No input by f27
     EndTail --> Stance
-    Hit1 --> Dodge: "Dodge from f16"
-    Hit2 --> Dodge: "Dodge from f16"
-    Hit3 --> Dodge: "Dodge from f20"
+    Hit1 --> Dodge: Dodge from f16
+    Hit2 --> Dodge: Dodge from f16
+    Hit3 --> Dodge: Dodge from f20
 ```
 
 - Cadence is fixed: each hit starts exactly 27 frames (0.45 s) after the previous one when chained.

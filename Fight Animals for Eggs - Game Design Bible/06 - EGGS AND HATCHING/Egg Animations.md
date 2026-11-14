@@ -58,7 +58,7 @@ The "NEW" tag is computed after the draw and is presentation only (D-018). The c
 | Common → Uncommon | 2.5 s | 1 | Three grey eggs drop into the nest; lever presses; a green egg pops up |
 | Uncommon → Rare | 3.0 s | 1 | Same press, with leaf burst and blue reveal |
 | Rare → Epic | 3.5 s | 2 | Eggs roll into the forge basin; bellows pump; violet egg emerges from the coals |
-| Epic → Legendary | 4.5 s | 3 | Eggs float into the glass dome; pylons pulse; dome fills with light; gold egg descends |
+| Epic → Legendary | 4.25 s | 3 | Eggs float into the glass dome; pylons pulse; dome fills with light; gold egg descends |
 | Legendary → Mythical | 5.0 s | 4 | Eggs rise into the crucible; rings spin up; aurora flares; rose egg rises |
 | Mythical → Secret | 6.0 s | 5 | Eggs orbit the altar; platforms lock; sky beam pulses; prismatic egg descends from the beam |
 

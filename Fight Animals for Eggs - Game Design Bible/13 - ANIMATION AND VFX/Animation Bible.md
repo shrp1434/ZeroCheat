@@ -82,14 +82,14 @@ Basic attack interval = `1 / AS` seconds, where AS comes from [[Animal Statistic
 
 ```mermaid
 sequenceDiagram
-    participant S as "Server (CombatService)"
-    participant C as "Each client (AnimationController)"
-    S->>S: "Decide action and hit time from config"
-    S-->>C: "Attribute AnimState, AnimSeq, TargetId"
-    C->>C: "Play clip, AdjustSpeed, schedule cosmetics"
-    S->>S: "Apply damage at configured hit time"
-    S-->>C: "Damage event (UnreliableRemoteEvent for numbers)"
-    C->>C: "Hit marker fires VFX and SFX locally"
+    participant S as Server (CombatService)
+    participant C as Each client (AnimationController)
+    S->>S: Decide action and hit time from config
+    S-->>C: Attribute AnimState, AnimSeq, TargetId
+    C->>C: Play clip, AdjustSpeed, schedule cosmetics
+    S->>S: Apply damage at configured hit time
+    S-->>C: Damage event (UnreliableRemoteEvent for numbers)
+    C->>C: Hit marker fires VFX and SFX locally
 ```
 
 1. The server is authoritative for **what** happens and **when** it takes effect ([[Server-Client Responsibilities]]).

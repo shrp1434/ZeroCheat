@@ -193,7 +193,7 @@ Ledger entries record every ascension for support and rollback. What a stolen an
 
 ## 7. Animations and audio
 
-The ascension sequence (3.0 s PROPOSED; 4.5 s for A5) shows the duplicates dissolving into rarity-coloured light that flows into the target, the new star igniting, and the new visual tier appearing. Specification: [[Animation - Ascension]]; audio: [[Sound - Ascension]].
+The ascension sequence (**PROPOSED**: 3.0 s for A1 rising to 6.5 s for A5, with short versions after first viewing; timings owned by [[Animation - Ascension]]) shows the duplicates dissolving into rarity-coloured light that flows into the target, the new star igniting, and the new visual tier appearing. Specification: [[Animation - Ascension]]; audio: [[Sound - Ascension]].
 
 ## Related documents
 - [[Ascension Progression Table]] · [[Ascension Expected Value Analysis]] · [[Ascension and Progression Index]]

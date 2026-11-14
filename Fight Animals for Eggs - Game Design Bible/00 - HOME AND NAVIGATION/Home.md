@@ -28,8 +28,9 @@ tags:
 | Phase | Pre-production: design documentation ([[M01 - Pre-production]]) |
 | Owner decisions recorded | 29 **CONFIRMED** in the [[Decision Register]] |
 | Team proposals awaiting approval | 16 **PROPOSED** decisions (D-030 to D-045) |
-| Open questions | 35 owner and team questions in [[Open Questions]], plus section-specific ones |
+| Open questions | 35 core questions (Q-001 to Q-035) plus 118 raised in section documents, with duplicates clustered, in [[Open Questions]] |
 | Code | None written. All Luau in this vault is illustrative and has not been executed |
+| Vault size | 427 notes, about 598,000 words, 135 Mermaid diagrams, 496 QA test cases, 137 backlog stories |
 | Launch roster | 60 animals designed ([[Animal Index]]); roster **PROPOSED** |
 
 ## Core gameplay loop
@@ -121,7 +122,7 @@ Full loop analysis: [[Core Gameplay Loop]].
 
 ## Latest changes
 
-See the [[Changelog]]. Most recent: **v0.1.0 (2026-11-14)** — the vault was created, covering all 28 sections, 60 animals, 12 bosses and 8 regions.
+See the [[Changelog]]. Most recent: **v0.1.0 (2026-11-14)**. The vault was created, covering all 28 sections, 60 animals, 12 bosses and 8 regions, and passed a full link, YAML and consistency audit.
 
 ## Related documents
 

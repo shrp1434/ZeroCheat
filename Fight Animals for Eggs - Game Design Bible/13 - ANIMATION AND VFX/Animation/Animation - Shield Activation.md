@@ -131,20 +131,20 @@ When a non-owner walks into an active dome, the server pushes them back 4 studs 
 ```mermaid
 stateDiagram-v2
     [*] --> GeneratorOffline
-    GeneratorOffline --> SpinUp: "Shield granted"
+    GeneratorOffline --> SpinUp: Shield granted
     SpinUp --> Raise
     Raise --> Idle
-    Idle --> Ripple: "Contact or projectile"
+    Idle --> Ripple: Contact or projectile
     Ripple --> Idle
-    Idle --> Warning: "30 s remaining"
-    Warning --> Collapse: "Shield ends"
-    Idle --> Break: "Shield broken (if allowed)"
+    Idle --> Warning: 30 s remaining
+    Warning --> Collapse: Shield ends
+    Idle --> Break: Shield broken (if allowed)
     Collapse --> Recharge
     Break --> Recharge
-    Recharge --> SpinUp: "Recharge complete and shield granted"
+    Recharge --> SpinUp: Recharge complete and shield granted
     Recharge --> GeneratorOffline
-    Idle --> Sleeping: "Owner goes offline"
-    Sleeping --> Idle: "Owner returns"
+    Idle --> Sleeping: Owner goes offline
+    Sleeping --> Idle: Owner returns
 ```
 
 ## 5. Mobile performance considerations

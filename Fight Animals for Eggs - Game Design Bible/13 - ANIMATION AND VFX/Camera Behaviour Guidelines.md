@@ -116,11 +116,11 @@ All modes use `Enum.CameraType.Scriptable` and tween `Camera.CFrame` and `FieldO
 ```mermaid
 stateDiagram-v2
     [*] --> Gameplay
-    Gameplay --> Cinematic: "Request accepted (conditions met)"
-    Cinematic --> Gameplay: "Sequence ends"
-    Cinematic --> Gameplay: "Skip or movement input"
-    Cinematic --> Gameplay: "Interrupt (damage, alarm, combat tag)"
-    Gameplay --> Gameplay: "Shake (additive)"
+    Gameplay --> Cinematic: Request accepted (conditions met)
+    Cinematic --> Gameplay: Sequence ends
+    Cinematic --> Gameplay: Skip or movement input
+    Cinematic --> Gameplay: Interrupt (damage, alarm, combat tag)
+    Gameplay --> Gameplay: Shake (additive)
 ```
 
 Illustrative Luau (not tested in Studio):

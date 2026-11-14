@@ -166,7 +166,7 @@ The Progression Score has fixed maximums per input ([[Progression Score Specific
 ## Adding base modules
 
 - New modules follow the cost curve shape in [[Canonical Proposed Values#12. Base modules (PROPOSED — availability Q-007)]] and the module structure in [[Player Base System]].
-- A module must not make raids unwinnable or make the **CONFIRMED** theft limits irrelevant.
+- A module must not make raids unwinnable or make the **CONFIRMED** three-animal theft cap (D-024) or the egg theft limit, once decided (Q-013), irrelevant.
 - A module that adds levels changes `MaxModuleLevels`; treat it as an odds change (see above).
 - Every level has a visible change, as for launch modules ([[Base Art Direction]]).
 

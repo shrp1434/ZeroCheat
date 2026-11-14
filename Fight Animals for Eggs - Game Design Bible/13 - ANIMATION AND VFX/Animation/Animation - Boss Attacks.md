@@ -187,17 +187,17 @@ Companions of participating players play their victory clips 1.0 s after f60 ([[
 stateDiagram-v2
     [*] --> Intro
     Intro --> CombatIdle
-    CombatIdle --> Telegraph: "Boss AI selects attack"
+    CombatIdle --> Telegraph: Boss AI selects attack
     Telegraph --> Strike
     Strike --> Recovery
     Recovery --> CombatIdle
-    CombatIdle --> Stagger: "Break threshold reached"
+    CombatIdle --> Stagger: Break threshold reached
     Stagger --> CombatIdle
-    CombatIdle --> PhaseTransition: "Health threshold"
+    CombatIdle --> PhaseTransition: Health threshold
     PhaseTransition --> CombatIdle
-    CombatIdle --> LeashReturn: "All players out of leash range"
+    CombatIdle --> LeashReturn: All players out of leash range
     LeashReturn --> CombatIdle
-    CombatIdle --> Defeat: "Health reaches zero"
+    CombatIdle --> Defeat: Health reaches zero
 ```
 
 Attacks never chain without a recovery. If the boss document wants combos, each step must still have its own telegraph of at least 0.8 s.
